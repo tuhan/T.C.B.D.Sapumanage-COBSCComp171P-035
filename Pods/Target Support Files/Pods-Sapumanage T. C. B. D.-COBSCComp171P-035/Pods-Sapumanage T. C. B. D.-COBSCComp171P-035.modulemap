@@ -1,0 +1,6 @@
+framework module Pods_Sapumanage_T__C__B__D__COBSCComp171P_035 {
+  umbrella header "Pods-Sapumanage T. C. B. D.-COBSCComp171P-035-umbrella.h"
+
+  export *
+  module * { export * }
+}
