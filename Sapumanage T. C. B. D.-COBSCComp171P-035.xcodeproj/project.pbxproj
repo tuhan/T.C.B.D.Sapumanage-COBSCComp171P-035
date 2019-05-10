@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		20FA625760753F31446CD440 /* Pods_Sapumanage_T__C__B__D__COBSCComp171P_035.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902A35A5D99DC9A3C3836890 /* Pods_Sapumanage_T__C__B__D__COBSCComp171P_035.framework */; };
+		E70D27682285BB2B00606493 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D27672285BB2B00606493 /* Student.swift */; };
+		E72AC9552285BE420058D742 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72AC9542285BE420058D742 /* Tabs.storyboard */; };
+		E72AC9572285BE810058D742 /* AuthPages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72AC9562285BE810058D742 /* AuthPages.storyboard */; };
+		E72AC9592285BF890058D742 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72AC9582285BF890058D742 /* LandingViewController.swift */; };
 		E75326D22285A91900D73FF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75326D12285A91900D73FF8 /* AppDelegate.swift */; };
 		E75326D42285A91900D73FF8 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75326D32285A91900D73FF8 /* FirstViewController.swift */; };
 		E75326D62285A91900D73FF8 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75326D52285A91900D73FF8 /* SecondViewController.swift */; };
@@ -20,6 +24,10 @@
 		73A3EF307670A9D3C9095D25 /* Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.release.xcconfig"; path = "Target Support Files/Pods-Sapumanage T. C. B. D.-COBSCComp171P-035/Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.release.xcconfig"; sourceTree = "<group>"; };
 		902A35A5D99DC9A3C3836890 /* Pods_Sapumanage_T__C__B__D__COBSCComp171P_035.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sapumanage_T__C__B__D__COBSCComp171P_035.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C21BA19E1B636408941BA3 /* Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.debug.xcconfig"; path = "Target Support Files/Pods-Sapumanage T. C. B. D.-COBSCComp171P-035/Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.debug.xcconfig"; sourceTree = "<group>"; };
+		E70D27672285BB2B00606493 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		E72AC9542285BE420058D742 /* Tabs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabs.storyboard; sourceTree = "<group>"; };
+		E72AC9562285BE810058D742 /* AuthPages.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthPages.storyboard; sourceTree = "<group>"; };
+		E72AC9582285BF890058D742 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
 		E75326CE2285A91900D73FF8 /* Sapumanage T. C. B. D.-COBSCComp171P-035.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Sapumanage T. C. B. D.-COBSCComp171P-035.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E75326D12285A91900D73FF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E75326D32285A91900D73FF8 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -56,8 +64,40 @@
 				C6C21BA19E1B636408941BA3 /* Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.debug.xcconfig */,
 				73A3EF307670A9D3C9095D25 /* Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		E70D27662285BB0000606493 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E70D27672285BB2B00606493 /* Student.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E70D27692285BB3A00606493 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				E72AC9582285BF890058D742 /* LandingViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		E70D276A2285BB4100606493 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E70D276B2285BB5000606493 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				E75326D72285A91900D73FF8 /* Main.storyboard */,
+				E72AC9542285BE420058D742 /* Tabs.storyboard */,
+				E72AC9562285BE810058D742 /* AuthPages.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 		E75326C52285A91900D73FF8 = {
@@ -81,10 +121,13 @@
 		E75326D02285A91900D73FF8 /* Sapumanage T. C. B. D.-COBSCComp171P-035 */ = {
 			isa = PBXGroup;
 			children = (
+				E70D276B2285BB5000606493 /* Storyboards */,
+				E70D276A2285BB4100606493 /* Views */,
+				E70D27692285BB3A00606493 /* Controllers */,
+				E70D27662285BB0000606493 /* Models */,
 				E75326D12285A91900D73FF8 /* AppDelegate.swift */,
 				E75326D32285A91900D73FF8 /* FirstViewController.swift */,
 				E75326D52285A91900D73FF8 /* SecondViewController.swift */,
-				E75326D72285A91900D73FF8 /* Main.storyboard */,
 				E75326DA2285A91A00D73FF8 /* Assets.xcassets */,
 				E75326DC2285A91A00D73FF8 /* LaunchScreen.storyboard */,
 				E75326DF2285A91A00D73FF8 /* Info.plist */,
@@ -153,9 +196,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E72AC9552285BE420058D742 /* Tabs.storyboard in Resources */,
 				E75326DE2285A91A00D73FF8 /* LaunchScreen.storyboard in Resources */,
 				E75326DB2285A91A00D73FF8 /* Assets.xcassets in Resources */,
 				E75326D92285A91900D73FF8 /* Main.storyboard in Resources */,
+				E72AC9572285BE810058D742 /* AuthPages.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,6 +311,8 @@
 				E75326D62285A91900D73FF8 /* SecondViewController.swift in Sources */,
 				E75326D22285A91900D73FF8 /* AppDelegate.swift in Sources */,
 				E75326D42285A91900D73FF8 /* FirstViewController.swift in Sources */,
+				E72AC9592285BF890058D742 /* LandingViewController.swift in Sources */,
+				E70D27682285BB2B00606493 /* Student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
