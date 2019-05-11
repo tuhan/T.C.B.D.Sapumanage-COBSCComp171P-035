@@ -28,7 +28,7 @@
                         <viewLayoutGuide key="safeArea" id="rdp-6W-ueB"/>
                     </view>
                     <connections>
-                        <segue destination="gb6-gl-VgC" kind="presentation" id="TH5-Fs-dhi"/>
+                        <segue destination="gb6-gl-VgC" kind="presentation" identifier="AuthSegue" id="TH5-Fs-dhi"/>
                         <segue destination="otw-88-rNd" kind="show" identifier="TabsSegue" id="ccb-c7-mor"/>
                     </connections>
                 </viewController>
