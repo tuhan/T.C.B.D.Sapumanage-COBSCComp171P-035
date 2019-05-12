@@ -10,6 +10,8 @@
 		20FA625760753F31446CD440 /* Pods_Sapumanage_T__C__B__D__COBSCComp171P_035.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902A35A5D99DC9A3C3836890 /* Pods_Sapumanage_T__C__B__D__COBSCComp171P_035.framework */; };
 		E70D27682285BB2B00606493 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D27672285BB2B00606493 /* Student.swift */; };
 		E72AB84C22880BF500303568 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E72AB84B22880BF500303568 /* GoogleService-Info.plist */; };
+		E72AB84F22881D2200303568 /* BioAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72AB84E22881D2200303568 /* BioAuthViewController.swift */; };
+		E72AB85122881EB900303568 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72AB85022881EB900303568 /* MyProfileViewController.swift */; };
 		E72AC9552285BE420058D742 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72AC9542285BE420058D742 /* Tabs.storyboard */; };
 		E72AC9572285BE810058D742 /* AuthPages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72AC9562285BE810058D742 /* AuthPages.storyboard */; };
 		E72AC9592285BF890058D742 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72AC9582285BF890058D742 /* LandingViewController.swift */; };
@@ -31,6 +33,8 @@
 		C6C21BA19E1B636408941BA3 /* Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.debug.xcconfig"; path = "Target Support Files/Pods-Sapumanage T. C. B. D.-COBSCComp171P-035/Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.debug.xcconfig"; sourceTree = "<group>"; };
 		E70D27672285BB2B00606493 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
 		E72AB84B22880BF500303568 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E72AB84E22881D2200303568 /* BioAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioAuthViewController.swift; sourceTree = "<group>"; };
+		E72AB85022881EB900303568 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
 		E72AC9542285BE420058D742 /* Tabs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabs.storyboard; sourceTree = "<group>"; };
 		E72AC9562285BE810058D742 /* AuthPages.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthPages.storyboard; sourceTree = "<group>"; };
 		E72AC9582285BF890058D742 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 		E70D27692285BB3A00606493 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				E72AB84D22881D0C00303568 /* Profile_Info */,
 				E7F53C872287EA5A008828A2 /* Auth */,
 				E7F53C862287EA42008828A2 /* Tab_Home */,
 				E72AC9582285BF890058D742 /* LandingViewController.swift */,
@@ -111,6 +116,15 @@
 				E72AC9562285BE810058D742 /* AuthPages.storyboard */,
 			);
 			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		E72AB84D22881D0C00303568 /* Profile_Info */ = {
+			isa = PBXGroup;
+			children = (
+				E72AB84E22881D2200303568 /* BioAuthViewController.swift */,
+				E72AB85022881EB900303568 /* MyProfileViewController.swift */,
+			);
+			path = Profile_Info;
 			sourceTree = "<group>";
 		};
 		E75326C52285A91900D73FF8 = {
@@ -344,9 +358,11 @@
 				E7F53C892287EB1E008828A2 /* AppSessionConnect.swift in Sources */,
 				E75326D22285A91900D73FF8 /* AppDelegate.swift in Sources */,
 				E7CBB1FF22874DA500D9332D /* LoginAuthViewController.swift in Sources */,
+				E72AB85122881EB900303568 /* MyProfileViewController.swift in Sources */,
 				E72AC9592285BF890058D742 /* LandingViewController.swift in Sources */,
 				E7D4A8FD228756330029DCC9 /* HomeViewController.swift in Sources */,
 				E7D4A8FF2287586B0029DCC9 /* HomeTableViewCell.swift in Sources */,
+				E72AB84F22881D2200303568 /* BioAuthViewController.swift in Sources */,
 				E7BD63E62287FB5500B6D46D /* StudentInfoViewController.swift in Sources */,
 				E70D27682285BB2B00606493 /* Student.swift in Sources */,
 			);
