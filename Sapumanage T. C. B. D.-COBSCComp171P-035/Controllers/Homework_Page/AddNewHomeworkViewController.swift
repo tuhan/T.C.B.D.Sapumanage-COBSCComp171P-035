@@ -10,10 +10,22 @@ import UIKit
 
 class AddNewHomeworkViewController: UIViewController {
 
+    @IBOutlet weak var descriptionTextView: UITextView!
+    @IBOutlet weak var homeworkTitleTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        //For Description
+        self.descriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
+        self.descriptionTextView.layer.borderWidth = 1.0;
+        self.descriptionTextView.layer.cornerRadius = 8;
+        
+        //For Homework Title
+        self.homeworkTitleTextField.layer.borderColor = UIColor.lightGray.cgColor
+        self.homeworkTitleTextField.layer.borderWidth = 1.0;
+        self.homeworkTitleTextField.layer.cornerRadius = 8;
+        
     }
     
 
@@ -21,6 +33,9 @@ class AddNewHomeworkViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func cancelButtonClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     
 
 }
