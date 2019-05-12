@@ -18,6 +18,7 @@ class MyProfileViewController: UIViewController {
     
     
     @IBAction func doneButtonClicked(_ sender: Any) {
+        AppSessionConnect.bioAuth = false
         self.dismiss(animated: true, completion: nil)
     }
     /*

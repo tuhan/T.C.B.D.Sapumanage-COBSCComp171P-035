@@ -10,6 +10,8 @@ import UIKit
 
 class BioAuthViewController: UIViewController {
 
+    let BioAuth = BiometricIDAuth ()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -24,7 +26,7 @@ class BioAuthViewController: UIViewController {
         }
         else
         {
-
+            authenticator();
         }
     }
     
@@ -32,6 +34,24 @@ class BioAuthViewController: UIViewController {
         AppSessionConnect.bioAuth = false
     }
     
+    func authenticator () {
+        
+        BioAuth.authenticateUser() { [weak self] message in
+            if let message = message {
+                let alertView = UIAlertController(title: "Authentication Error", message: message, preferredStyle: .alert)
+                let okAction = UIAlertAction(title: "Ok", style: .default, handler: {(action: UIAlertAction!) in print ("Try Again")})
+                alertView.addAction(okAction)
+                self!.present(alertView, animated: true)
+            }
+            else
+            {
+                AppSessionConnect.bioAuth = true
+                self!.performSegue(withIdentifier: "ShowProfileInfoSegue", sender: nil)
+            }
+        }
+        
+    }
+
     
     
 }
