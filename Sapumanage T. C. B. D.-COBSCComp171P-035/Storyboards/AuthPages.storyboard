@@ -27,7 +27,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wxB-w3-KuY">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
                                                 <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-header" translatesAutoresizingMaskIntoConstraints="NO" id="F3c-DA-jvF">
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-header" translatesAutoresizingMaskIntoConstraints="NO" id="F3c-DA-jvF">
                                                         <rect key="frame" x="117.5" y="45.5" width="140" height="131"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="131" id="3Jt-bQ-RG5"/>
@@ -41,7 +41,7 @@
                                                     <constraint firstItem="F3c-DA-jvF" firstAttribute="centerX" secondItem="wxB-w3-KuY" secondAttribute="centerX" id="XBa-Qc-X8J"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ef-bJ-bmT">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ef-bJ-bmT">
                                                 <rect key="frame" x="0.0" y="222.5" width="375" height="222"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Username" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NOg-OV-tBl">
@@ -162,7 +162,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wgG-Sg-M4B">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="222.5"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-header" translatesAutoresizingMaskIntoConstraints="NO" id="kjh-Bu-LCd">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-header" translatesAutoresizingMaskIntoConstraints="NO" id="kjh-Bu-LCd">
                                                 <rect key="frame" x="117.5" y="45.5" width="140" height="131"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="140" id="71l-2W-GkX"/>

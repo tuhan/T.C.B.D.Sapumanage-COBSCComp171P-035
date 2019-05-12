@@ -8,10 +8,16 @@
 
 import UIKit
 
-class StudentInfoViewController: UINavigationController {
+class StudentInfoViewController: UIViewController {
 
     var studentInfo: Student!
     
+    @IBOutlet weak var dpImageView: UIImageView!
+    @IBOutlet weak var fullNameLabel: UILabel!
+    @IBOutlet weak var batchNameLabel: UILabel!
+
+    @IBOutlet weak var phoneNumberLabel: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +25,9 @@ class StudentInfoViewController: UINavigationController {
     }
     
 
+    @IBAction func doneButtonClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

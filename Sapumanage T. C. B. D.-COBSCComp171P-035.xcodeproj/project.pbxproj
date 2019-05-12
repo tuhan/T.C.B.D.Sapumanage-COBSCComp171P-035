@@ -15,13 +15,13 @@
 		E75326D22285A91900D73FF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75326D12285A91900D73FF8 /* AppDelegate.swift */; };
 		E75326D92285A91900D73FF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75326D72285A91900D73FF8 /* Main.storyboard */; };
 		E75326DE2285A91A00D73FF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75326DC2285A91A00D73FF8 /* LaunchScreen.storyboard */; };
+		E7BD63E62287FB5500B6D46D /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD63E52287FB5500B6D46D /* StudentInfoViewController.swift */; };
 		E7CBB1FF22874DA500D9332D /* LoginAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CBB1FE22874DA500D9332D /* LoginAuthViewController.swift */; };
 		E7D4A8FD228756330029DCC9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4A8FC228756330029DCC9 /* HomeViewController.swift */; };
 		E7D4A8FF2287586B0029DCC9 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4A8FE2287586B0029DCC9 /* HomeTableViewCell.swift */; };
 		E7D4A90122875BC70029DCC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D4A90022875BC70029DCC9 /* Assets.xcassets */; };
 		E7F53C852287DC37008828A2 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F53C842287DC37008828A2 /* PasswordResetViewController.swift */; };
 		E7F53C892287EB1E008828A2 /* AppSessionConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F53C882287EB1E008828A2 /* AppSessionConnect.swift */; };
-		E7F53C8D2287F1D2008828A2 /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F53C8C2287F1D2008828A2 /* StudentInfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,13 +37,13 @@
 		E75326D82285A91900D73FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E75326DD2285A91A00D73FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E75326DF2285A91A00D73FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E7BD63E52287FB5500B6D46D /* StudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
 		E7CBB1FE22874DA500D9332D /* LoginAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthViewController.swift; sourceTree = "<group>"; };
 		E7D4A8FC228756330029DCC9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		E7D4A8FE2287586B0029DCC9 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		E7D4A90022875BC70029DCC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7F53C842287DC37008828A2 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		E7F53C882287EB1E008828A2 /* AppSessionConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSessionConnect.swift; sourceTree = "<group>"; };
-		E7F53C8C2287F1D2008828A2 /* StudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,8 +148,8 @@
 			isa = PBXGroup;
 			children = (
 				E7D4A8FC228756330029DCC9 /* HomeViewController.swift */,
+				E7BD63E52287FB5500B6D46D /* StudentInfoViewController.swift */,
 				E7D4A8FE2287586B0029DCC9 /* HomeTableViewCell.swift */,
-				E7F53C8C2287F1D2008828A2 /* StudentInfoViewController.swift */,
 			);
 			path = Tab_Home;
 			sourceTree = "<group>";
@@ -343,7 +343,7 @@
 				E72AC9592285BF890058D742 /* LandingViewController.swift in Sources */,
 				E7D4A8FD228756330029DCC9 /* HomeViewController.swift in Sources */,
 				E7D4A8FF2287586B0029DCC9 /* HomeTableViewCell.swift in Sources */,
-				E7F53C8D2287F1D2008828A2 /* StudentInfoViewController.swift in Sources */,
+				E7BD63E62287FB5500B6D46D /* StudentInfoViewController.swift in Sources */,
 				E70D27682285BB2B00606493 /* Student.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
