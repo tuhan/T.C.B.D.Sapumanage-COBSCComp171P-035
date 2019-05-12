@@ -21,13 +21,21 @@ class BioAuthViewController: UIViewController {
     
 
     override func viewDidAppear(_ animated: Bool) {
-        if AppSessionConnect.bioAuth == true {
-            self.performSegue(withIdentifier: "ShowProfileInfoSegue", sender: nil)
+        
+        if AppSessionConnect.activeSession != true {
+            self.dismiss(animated: true, completion: nil)
         }
         else
         {
-            authenticator();
+            if AppSessionConnect.bioAuth == true {
+                self.performSegue(withIdentifier: "ShowProfileInfoSegue", sender: nil)
+            }
+            else
+            {
+                authenticator();
+            }
         }
+        
     }
     
     override func viewDidDisappear(_ animated: Bool) {

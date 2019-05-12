@@ -19,7 +19,7 @@ import Foundation
 
 class AppSessionConnect {
     //TODO: FALSE
-    public static var activeSession: Bool = true
+    public static var activeSession: Bool = false
     public static var bioAuth: Bool = false
     
 }
