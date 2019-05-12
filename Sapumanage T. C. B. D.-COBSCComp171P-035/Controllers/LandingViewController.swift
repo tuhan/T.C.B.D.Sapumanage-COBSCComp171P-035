@@ -17,8 +17,8 @@ class LandingViewController: UIViewController {
     
 
     override func viewDidAppear(_ animated: Bool) {
-        //self.performSegue(withIdentifier: "AuthSegue", sender: nil)
-        self.performSegue(withIdentifier: "TabsSegue", sender: nil)
+        self.performSegue(withIdentifier: "AuthSegue", sender: nil)
+        //self.performSegue(withIdentifier: "TabsSegue", sender: nil)
     }
 
 }

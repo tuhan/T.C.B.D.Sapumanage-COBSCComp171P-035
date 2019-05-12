@@ -98,10 +98,28 @@
                         <viewLayoutGuide key="safeArea" id="8Ii-n0-Vss"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="IDy-nK-b2g"/>
+                    <connections>
+                        <segue destination="GJk-ql-1XO" kind="presentation" identifier="ViewUserSegue" id="uw6-Xl-4WC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kQk-T3-0r6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1012" y="-560.09852216748766"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="PRl-uc-Up2">
+            <objects>
+                <viewController id="GJk-ql-1XO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uRk-Rt-rjc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="9Bj-fX-0Pl"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MZa-uY-iWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1954" y="-560"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="AfM-r4-sZB">
@@ -117,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H6I-mD-QUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="669.45812807881771"/>
+            <point key="canvasLocation" x="70" y="784"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="OXe-fW-4RU">
