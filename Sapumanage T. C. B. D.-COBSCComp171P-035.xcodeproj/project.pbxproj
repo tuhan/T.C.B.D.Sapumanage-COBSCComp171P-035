@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		20FA625760753F31446CD440 /* Pods_Sapumanage_T__C__B__D__COBSCComp171P_035.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902A35A5D99DC9A3C3836890 /* Pods_Sapumanage_T__C__B__D__COBSCComp171P_035.framework */; };
 		E70D27682285BB2B00606493 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D27672285BB2B00606493 /* Student.swift */; };
+		E72AB84C22880BF500303568 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E72AB84B22880BF500303568 /* GoogleService-Info.plist */; };
 		E72AC9552285BE420058D742 /* Tabs.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72AC9542285BE420058D742 /* Tabs.storyboard */; };
 		E72AC9572285BE810058D742 /* AuthPages.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E72AC9562285BE810058D742 /* AuthPages.storyboard */; };
 		E72AC9592285BF890058D742 /* LandingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72AC9582285BF890058D742 /* LandingViewController.swift */; };
@@ -29,6 +30,7 @@
 		902A35A5D99DC9A3C3836890 /* Pods_Sapumanage_T__C__B__D__COBSCComp171P_035.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sapumanage_T__C__B__D__COBSCComp171P_035.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C21BA19E1B636408941BA3 /* Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.debug.xcconfig"; path = "Target Support Files/Pods-Sapumanage T. C. B. D.-COBSCComp171P-035/Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.debug.xcconfig"; sourceTree = "<group>"; };
 		E70D27672285BB2B00606493 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		E72AB84B22880BF500303568 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E72AC9542285BE420058D742 /* Tabs.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Tabs.storyboard; sourceTree = "<group>"; };
 		E72AC9562285BE810058D742 /* AuthPages.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AuthPages.storyboard; sourceTree = "<group>"; };
 		E72AC9582285BF890058D742 /* LandingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandingViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				E7D4A90022875BC70029DCC9 /* Assets.xcassets */,
 				E75326DC2285A91A00D73FF8 /* LaunchScreen.storyboard */,
 				E75326DF2285A91A00D73FF8 /* Info.plist */,
+				E72AB84B22880BF500303568 /* GoogleService-Info.plist */,
 			);
 			path = "Sapumanage T. C. B. D.-COBSCComp171P-035";
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				E75326D92285A91900D73FF8 /* Main.storyboard in Resources */,
 				E72AC9572285BE810058D742 /* AuthPages.storyboard in Resources */,
 				E7D4A90122875BC70029DCC9 /* Assets.xcassets in Resources */,
+				E72AB84C22880BF500303568 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

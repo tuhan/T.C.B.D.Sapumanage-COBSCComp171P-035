@@ -16,6 +16,7 @@ class Student {
     var studentPhoneNumber: Int!
     var studentBatchName: String!
     var studentUrlFB: String?
+    var studentUsernameFB: String?
     var studentDpURL : String?
     var studentDp: UIImage?
     
