@@ -10,6 +10,8 @@ import UIKit
 
 class HomeViewController: UIViewController, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+    
     var mockStudent = Student(studentID: "tuhan", studentFirstName: "Tuhan", studentLastName: "Sapumanage", studentPhoneNumber: 0770438524, studentBatchName: "BSc (Hons) Computing")
     
     var studentList: [Student] = []
@@ -19,7 +21,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HomeCell", for: indexPath) as! HomeTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HomePageTableViewCell", for: indexPath) as! HomePageTableViewCell
         return cell
     }
     

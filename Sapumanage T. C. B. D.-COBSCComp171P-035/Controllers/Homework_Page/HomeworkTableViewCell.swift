@@ -1,18 +1,19 @@
 //
-//  HomeTableViewCell.swift
+//  HomeworkTableViewCell.swift
 //  Sapumanage T. C. B. D.-COBSCComp171P-035
 //
-//  Created by Tuhan Sapumanage on 5/12/19.
+//  Created by Tuhan Sapumanage on 5/13/19.
 //  Copyright © 2019 Tuhan Sapumanage. All rights reserved.
 //
 
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
+class HomeworkTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var nameLabel: UIView!
-    @IBOutlet weak var mobileLabel: UIView!
-    @IBOutlet weak var dpImageView: UIView!
+    @IBOutlet weak var categoryLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var homeworkTitle: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

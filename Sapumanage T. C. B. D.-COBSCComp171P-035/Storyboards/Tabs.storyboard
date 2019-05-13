@@ -13,13 +13,13 @@
         <!--My Homework-->
         <scene sceneID="euy-mT-jAg">
             <objects>
-                <viewController id="Gdx-qs-AHy" customClass="HomeViewController" customModule="Sapumanage_T__C__B__D__COBSCComp171P_035" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Gdx-qs-AHy" customClass="HomeworkViewController" customModule="Sapumanage_T__C__B__D__COBSCComp171P_035" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zfa-IN-Nvr">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuhan Sapumanage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X09-Du-btO">
-                                <rect key="frame" x="16" y="127" width="245" height="21"/>
+                                <rect key="frame" x="16" y="75" width="245" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="245" id="2s5-lo-Qvy"/>
                                     <constraint firstAttribute="height" constant="21" id="Jq5-V7-84H"/>
@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6C4-pr-tDg">
-                                <rect key="frame" x="296" y="121" width="63" height="34"/>
+                                <rect key="frame" x="296" y="69" width="63" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="D2d-Kw-YVJ"/>
                                     <constraint firstAttribute="width" constant="63" id="xLg-ZE-0nw"/>
@@ -40,40 +40,98 @@
                                     <segue destination="AaQ-Xu-Mjo" kind="showDetail" id="C6F-XG-nuB"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GZB-FA-T42">
-                                <rect key="frame" x="16" y="163" width="343" height="455"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SBI-Ta-tvQ">
+                                <rect key="frame" x="0.0" y="103" width="375" height="515"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="110" id="b8J-uT-thl">
-                                        <rect key="frame" x="0.0" y="28" width="343" height="110"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeworkTableViewCell" rowHeight="87" id="I3z-03-TDH" customClass="HomeworkTableViewCell" customModule="Sapumanage_T__C__B__D__COBSCComp171P_035" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="b8J-uT-thl" id="hDY-6t-pnf">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="109.5"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I3z-03-TDH" id="NeA-CR-lJx">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homework Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hs-gP-7aV">
+                                                    <rect key="frame" x="15" y="11" width="195" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="195" id="Zef-ei-fzL"/>
+                                                        <constraint firstAttribute="height" constant="21" id="atV-x0-dWP"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Application to be finished by Mid-May for Submission" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDE-ZG-tqZ">
+                                                    <rect key="frame" x="15" y="33" width="345" height="48"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="48" id="EOq-gY-x8L"/>
+                                                        <constraint firstAttribute="width" constant="345" id="JvJ-BO-M0L"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Non - Acadamic" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZT-Ap-tYR">
+                                                    <rect key="frame" x="250" y="11" width="110" height="18"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="YZT-Ap-tYR" firstAttribute="top" secondItem="NeA-CR-lJx" secondAttribute="topMargin" id="8sg-Wp-XZs"/>
+                                                <constraint firstItem="YZT-Ap-tYR" firstAttribute="leading" secondItem="0Hs-gP-7aV" secondAttribute="trailing" constant="40" id="ADS-7I-f9M"/>
+                                                <constraint firstItem="kDE-ZG-tqZ" firstAttribute="top" secondItem="0Hs-gP-7aV" secondAttribute="bottom" constant="1" id="S5I-lu-7od"/>
+                                                <constraint firstItem="YZT-Ap-tYR" firstAttribute="trailing" secondItem="NeA-CR-lJx" secondAttribute="trailingMargin" id="aNx-ti-4NK"/>
+                                                <constraint firstItem="0Hs-gP-7aV" firstAttribute="leading" secondItem="NeA-CR-lJx" secondAttribute="leadingMargin" id="e3N-cB-d63"/>
+                                                <constraint firstItem="0Hs-gP-7aV" firstAttribute="top" secondItem="NeA-CR-lJx" secondAttribute="topMargin" id="p1J-Fh-1uJ"/>
+                                                <constraint firstItem="kDE-ZG-tqZ" firstAttribute="centerX" secondItem="NeA-CR-lJx" secondAttribute="centerX" id="uxq-TJ-hUm"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="categoryLabel" destination="YZT-Ap-tYR" id="42d-OK-R1q"/>
+                                            <outlet property="descLabel" destination="kDE-ZG-tqZ" id="6sK-VD-GHp"/>
+                                            <outlet property="homeworkTitle" destination="0Hs-gP-7aV" id="WNi-Fm-Hgf"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="Gdx-qs-AHy" id="SqC-Jk-mAU"/>
+                                    <outlet property="delegate" destination="Gdx-qs-AHy" id="m2F-qo-xHe"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="KEp-eh-kdb" firstAttribute="trailing" secondItem="6C4-pr-tDg" secondAttribute="trailing" constant="16" id="0Pf-BP-Z1i"/>
-                            <constraint firstItem="KEp-eh-kdb" firstAttribute="trailing" secondItem="GZB-FA-T42" secondAttribute="trailing" constant="16" id="254-HG-hbl"/>
-                            <constraint firstItem="GZB-FA-T42" firstAttribute="bottom" secondItem="KEp-eh-kdb" secondAttribute="bottom" id="57K-5R-Wxk"/>
-                            <constraint firstItem="GZB-FA-T42" firstAttribute="top" secondItem="6C4-pr-tDg" secondAttribute="bottom" constant="8" id="OQS-U9-MDw"/>
-                            <constraint firstItem="GZB-FA-T42" firstAttribute="leading" secondItem="KEp-eh-kdb" secondAttribute="leading" constant="16" id="TnL-mq-5fx"/>
+                            <constraint firstItem="SBI-Ta-tvQ" firstAttribute="leading" secondItem="zfa-IN-Nvr" secondAttribute="leading" id="8N6-AY-xt8"/>
+                            <constraint firstItem="SBI-Ta-tvQ" firstAttribute="top" secondItem="6C4-pr-tDg" secondAttribute="bottom" id="Rzo-Jt-0Mo"/>
                             <constraint firstItem="X09-Du-btO" firstAttribute="top" secondItem="KEp-eh-kdb" secondAttribute="top" constant="11" id="WQS-pT-sNF"/>
                             <constraint firstItem="X09-Du-btO" firstAttribute="leading" secondItem="KEp-eh-kdb" secondAttribute="leading" constant="16" id="eyd-Pi-tkQ"/>
+                            <constraint firstItem="SBI-Ta-tvQ" firstAttribute="bottom" secondItem="KEp-eh-kdb" secondAttribute="bottom" id="jXb-LZ-NaN"/>
+                            <constraint firstItem="SBI-Ta-tvQ" firstAttribute="trailing" secondItem="KEp-eh-kdb" secondAttribute="trailing" id="nv0-DX-sxm"/>
                             <constraint firstItem="6C4-pr-tDg" firstAttribute="top" secondItem="KEp-eh-kdb" secondAttribute="top" constant="5" id="zCU-03-A84"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KEp-eh-kdb"/>
                     </view>
-                    <navigationItem key="navigationItem" title="My Homework" id="iI0-Cp-kbl"/>
+                    <navigationItem key="navigationItem" title="My Homework" largeTitleDisplayMode="never" id="iI0-Cp-kbl"/>
+                    <connections>
+                        <outlet property="tableView" destination="SBI-Ta-tvQ" id="ppL-nl-d56"/>
+                        <segue destination="KQf-Hf-M0C" kind="presentation" identifier="HomeworkInfoSegue" id="8Qn-X6-47L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dBV-fS-OPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="pj3-Oe-RUZ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1954.4000000000001" y="166.8665667166417"/>
+        </scene>
+        <!--Storyboard Reference-->
+        <scene sceneID="0he-m1-X33">
+            <objects>
+                <viewControllerPlaceholder id="KQf-Hf-M0C" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ju8-cw-QXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2815" y="116"/>
         </scene>
         <!--Homework-->
         <scene sceneID="kJQ-ZY-t5F">
@@ -95,7 +153,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeCell" rowHeight="76" id="PNL-Av-Drt" customClass="HomeTableViewCell" customModule="Sapumanage_T__C__B__D__COBSCComp171P_035" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomePageTableViewCell" rowHeight="76" id="PNL-Av-Drt" customClass="HomePageTableViewCell" customModule="Sapumanage_T__C__B__D__COBSCComp171P_035" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="76"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PNL-Av-Drt" id="tXm-wY-THB">
@@ -132,11 +190,6 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="dUW-Pv-9Y0" secondAttribute="bottom" constant="5" id="tNP-9n-NJL"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <outlet property="dpImageView" destination="tXm-wY-THB" id="Smz-4s-MZr"/>
-                                            <outlet property="mobileLabel" destination="tXm-wY-THB" id="crd-eu-Lgy"/>
-                                            <outlet property="nameLabel" destination="tXm-wY-THB" id="FxJ-D1-9Jl"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -156,6 +209,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="IDy-nK-b2g"/>
                     <connections>
+                        <outlet property="tableView" destination="m1J-Hk-3fR" id="s8x-fx-Im1"/>
                         <segue destination="GJk-ql-1XO" kind="presentation" identifier="ViewUserSegue" id="04q-Lq-Qof"/>
                     </connections>
                 </viewController>
@@ -1142,8 +1196,8 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="2sw-dG-bgD" kind="relationship" relationship="viewControllers" id="YNR-ql-awj"/>
                         <segue destination="JOw-yl-0x8" kind="relationship" relationship="viewControllers" id="sQI-ad-g0R"/>
+                        <segue destination="2sw-dG-bgD" kind="relationship" relationship="viewControllers" id="YNR-ql-awj"/>
                         <segue destination="VI8-7a-ll6" kind="relationship" relationship="viewControllers" id="gpZ-DJ-SGZ"/>
                     </connections>
                 </tabBarController>

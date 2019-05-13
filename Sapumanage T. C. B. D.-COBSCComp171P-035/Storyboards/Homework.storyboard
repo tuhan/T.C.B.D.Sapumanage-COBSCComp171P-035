@@ -532,6 +532,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="Add New Homework" id="17T-LX-IrL"/>
                     <connections>
+                        <outlet property="categorySwitch" destination="mZh-Fr-FPe" id="RTo-Hq-7By"/>
                         <outlet property="descriptionTextView" destination="GAR-US-LWc" id="3SK-6T-dnH"/>
                         <outlet property="homeworkTitleTextField" destination="iVH-pk-3as" id="qfe-J5-7UG"/>
                     </connections>

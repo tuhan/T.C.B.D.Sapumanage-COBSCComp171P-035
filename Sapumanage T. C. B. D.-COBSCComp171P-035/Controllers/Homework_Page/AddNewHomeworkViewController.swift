@@ -12,6 +12,7 @@ class AddNewHomeworkViewController: UIViewController {
 
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var homeworkTitleTextField: UITextField!
+    @IBOutlet weak var categorySwitch: UISwitch!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,18 +32,29 @@ class AddNewHomeworkViewController: UIViewController {
 
     @IBAction func saveButtonClicked(_ sender: Any) {
         
-        let homeworkOne = Homework(json: ["homeworkTitle": "Complete iOS Assignment", "homeworkCategory": "Acadamic", "homeworkDesc": "Completed"])
+        var homeworkType: String = ""
+        var homeworkArray: [Homework] = []
         
-        let homeworkArray = [homeworkOne]
+        if categorySwitch.isOn {
+            homeworkType = "Acadamic"
+        }
+        else
+        {
+            homeworkType = "Non-Acadamic"
+        }
+        
+        let newHomework = Homework(json: ["homeworkTitle": homeworkTitleTextField.text, "homeworkCategory": homeworkType, "homeworkDesc": descriptionTextView.text])
+        
+        if UserDefaults.standard.object(forKey: "homeworkList") != nil {
+            homeworkArray = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: "homeworkList") as! Data) as! [Homework]
+        }
+        
+        homeworkArray.append(newHomework)
         
         let encodedData = NSKeyedArchiver.archivedData(withRootObject: homeworkArray)
         UserDefaults.standard.set(encodedData, forKey: "homeworkList")
 
-        let decodedArray = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: "homeworkList") as! Data) as! [Homework]
-       
-        print("\(decodedArray[0].homeworkTitle)\(decodedArray[0].homeworkDesc)")
-
-    
+        self.dismiss(animated: true, completion: nil)
         
     }
     

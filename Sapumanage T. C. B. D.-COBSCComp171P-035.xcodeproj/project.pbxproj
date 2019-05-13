@@ -23,10 +23,13 @@
 		E75326D22285A91900D73FF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75326D12285A91900D73FF8 /* AppDelegate.swift */; };
 		E75326D92285A91900D73FF8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75326D72285A91900D73FF8 /* Main.storyboard */; };
 		E75326DE2285A91A00D73FF8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E75326DC2285A91A00D73FF8 /* LaunchScreen.storyboard */; };
+		E75934622289918D009F934C /* HomePageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E75934612289918D009F934C /* HomePageTableViewCell.swift */; };
+		E7593464228992D9009F934C /* HomeworkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7593463228992D9009F934C /* HomeworkTableViewCell.swift */; };
+		E759346622899B38009F934C /* ViewHomework.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E759346522899B38009F934C /* ViewHomework.storyboard */; };
+		E759346A22899C13009F934C /* InfoHomeworkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E759346922899C13009F934C /* InfoHomeworkViewController.swift */; };
 		E7BD63E62287FB5500B6D46D /* StudentInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7BD63E52287FB5500B6D46D /* StudentInfoViewController.swift */; };
 		E7CBB1FF22874DA500D9332D /* LoginAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7CBB1FE22874DA500D9332D /* LoginAuthViewController.swift */; };
 		E7D4A8FD228756330029DCC9 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4A8FC228756330029DCC9 /* HomeViewController.swift */; };
-		E7D4A8FF2287586B0029DCC9 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7D4A8FE2287586B0029DCC9 /* HomeTableViewCell.swift */; };
 		E7D4A90122875BC70029DCC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E7D4A90022875BC70029DCC9 /* Assets.xcassets */; };
 		E7F53C852287DC37008828A2 /* PasswordResetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F53C842287DC37008828A2 /* PasswordResetViewController.swift */; };
 		E7F53C892287EB1E008828A2 /* AppSessionConnect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7F53C882287EB1E008828A2 /* AppSessionConnect.swift */; };
@@ -53,10 +56,13 @@
 		E75326D82285A91900D73FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E75326DD2285A91A00D73FF8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E75326DF2285A91A00D73FF8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E75934612289918D009F934C /* HomePageTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageTableViewCell.swift; sourceTree = "<group>"; };
+		E7593463228992D9009F934C /* HomeworkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkTableViewCell.swift; sourceTree = "<group>"; };
+		E759346522899B38009F934C /* ViewHomework.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ViewHomework.storyboard; sourceTree = "<group>"; };
+		E759346922899C13009F934C /* InfoHomeworkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoHomeworkViewController.swift; sourceTree = "<group>"; };
 		E7BD63E52287FB5500B6D46D /* StudentInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentInfoViewController.swift; sourceTree = "<group>"; };
 		E7CBB1FE22874DA500D9332D /* LoginAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginAuthViewController.swift; sourceTree = "<group>"; };
 		E7D4A8FC228756330029DCC9 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		E7D4A8FE2287586B0029DCC9 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		E7D4A90022875BC70029DCC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E7F53C842287DC37008828A2 /* PasswordResetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordResetViewController.swift; sourceTree = "<group>"; };
 		E7F53C882287EB1E008828A2 /* AppSessionConnect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSessionConnect.swift; sourceTree = "<group>"; };
@@ -127,6 +133,7 @@
 				E72AC9542285BE420058D742 /* Tabs.storyboard */,
 				E72AC9562285BE810058D742 /* AuthPages.storyboard */,
 				E72AB85622882B6F00303568 /* Homework.storyboard */,
+				E759346522899B38009F934C /* ViewHomework.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -146,6 +153,8 @@
 			children = (
 				E72AB8592288311B00303568 /* HomeworkViewController.swift */,
 				E72AB85D2288395100303568 /* AddNewHomeworkViewController.swift */,
+				E7593463228992D9009F934C /* HomeworkTableViewCell.swift */,
+				E759346922899C13009F934C /* InfoHomeworkViewController.swift */,
 			);
 			path = Homework_Page;
 			sourceTree = "<group>";
@@ -189,7 +198,7 @@
 			children = (
 				E7D4A8FC228756330029DCC9 /* HomeViewController.swift */,
 				E7BD63E52287FB5500B6D46D /* StudentInfoViewController.swift */,
-				E7D4A8FE2287586B0029DCC9 /* HomeTableViewCell.swift */,
+				E75934612289918D009F934C /* HomePageTableViewCell.swift */,
 			);
 			path = Tab_Home;
 			sourceTree = "<group>";
@@ -269,6 +278,7 @@
 				E75326D92285A91900D73FF8 /* Main.storyboard in Resources */,
 				E72AC9572285BE810058D742 /* AuthPages.storyboard in Resources */,
 				E72AB85722882B6F00303568 /* Homework.storyboard in Resources */,
+				E759346622899B38009F934C /* ViewHomework.storyboard in Resources */,
 				E7D4A90122875BC70029DCC9 /* Assets.xcassets in Resources */,
 				E72AB84C22880BF500303568 /* GoogleService-Info.plist in Resources */,
 			);
@@ -383,16 +393,18 @@
 				E7F53C892287EB1E008828A2 /* AppSessionConnect.swift in Sources */,
 				E72AB85A2288311B00303568 /* HomeworkViewController.swift in Sources */,
 				E75326D22285A91900D73FF8 /* AppDelegate.swift in Sources */,
+				E759346A22899C13009F934C /* InfoHomeworkViewController.swift in Sources */,
+				E7593464228992D9009F934C /* HomeworkTableViewCell.swift in Sources */,
 				E72AB85522882AB900303568 /* Homework.swift in Sources */,
 				E7CBB1FF22874DA500D9332D /* LoginAuthViewController.swift in Sources */,
 				E72AB85122881EB900303568 /* MyProfileViewController.swift in Sources */,
 				E72AC9592285BF890058D742 /* LandingViewController.swift in Sources */,
 				E7D4A8FD228756330029DCC9 /* HomeViewController.swift in Sources */,
-				E7D4A8FF2287586B0029DCC9 /* HomeTableViewCell.swift in Sources */,
 				E72AB8532288283B00303568 /* BiometricAuthenticator.swift in Sources */,
 				E72AB84F22881D2200303568 /* BioAuthViewController.swift in Sources */,
 				E7BD63E62287FB5500B6D46D /* StudentInfoViewController.swift in Sources */,
 				E70D27682285BB2B00606493 /* Student.swift in Sources */,
+				E75934622289918D009F934C /* HomePageTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
