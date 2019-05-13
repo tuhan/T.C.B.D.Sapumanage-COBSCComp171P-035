@@ -239,13 +239,21 @@
                                                     <action selector="cancelButtonClicked:" destination="al7-o5-358" eventType="touchUpInside" id="hf2-BX-kCe"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reset Your Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="C0N-rc-Rbm">
+                                                <rect key="frame" x="101.5" y="193" width="172" height="20.5"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="kjh-Bu-LCd" firstAttribute="centerX" secondItem="wgG-Sg-M4B" secondAttribute="centerX" id="0Lv-au-iYe"/>
                                             <constraint firstItem="7dm-zH-rAG" firstAttribute="top" secondItem="wgG-Sg-M4B" secondAttribute="top" constant="52" id="7fS-B8-6US"/>
+                                            <constraint firstItem="C0N-rc-Rbm" firstAttribute="top" secondItem="kjh-Bu-LCd" secondAttribute="bottom" constant="16.5" id="8Rv-mv-Kuo"/>
                                             <constraint firstItem="7dm-zH-rAG" firstAttribute="leading" secondItem="wgG-Sg-M4B" secondAttribute="leading" constant="23" id="H7G-9b-euT"/>
                                             <constraint firstItem="kjh-Bu-LCd" firstAttribute="centerY" secondItem="wgG-Sg-M4B" secondAttribute="centerY" id="Hff-Kc-ogI"/>
+                                            <constraint firstItem="C0N-rc-Rbm" firstAttribute="centerX" secondItem="wgG-Sg-M4B" secondAttribute="centerX" id="NeQ-X2-1Qd"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hdr-GW-Mqv">
@@ -266,7 +274,7 @@
                                                     <action selector="sendEmailButtonClicked:" destination="al7-o5-358" eventType="touchUpInside" id="4Vv-Ce-FZx"/>
                                                 </connections>
                                             </button>
-                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Username" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="GFF-Hk-6TH">
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Email Address" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="GFF-Hk-6TH">
                                                 <rect key="frame" x="47" y="17.5" width="281" height="39"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -278,14 +286,41 @@
                                                 <nil key="textColor"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
+                                                <connections>
+                                                    <outlet property="delegate" destination="al7-o5-358" id="0Wc-N9-OOM"/>
+                                                </connections>
                                             </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter an valid Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14g-se-h0g">
+                                                <rect key="frame" x="47" y="58.5" width="281" height="15"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="FXT-kp-pSl"/>
+                                                    <constraint firstAttribute="width" constant="281" id="YQ2-y5-hSj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error Occured! Please check your email address and Try Again!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j5j-4c-dGk">
+                                                <rect key="frame" x="47" y="151" width="281" height="39"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="281" id="UpN-Z3-gfd"/>
+                                                    <constraint firstAttribute="height" constant="39" id="s88-Bd-HCj"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="j5j-4c-dGk" firstAttribute="centerX" secondItem="Hdr-GW-Mqv" secondAttribute="centerX" id="0uM-Sd-y0s"/>
                                             <constraint firstItem="GFF-Hk-6TH" firstAttribute="centerX" secondItem="Hdr-GW-Mqv" secondAttribute="centerX" id="3wg-hR-hwP"/>
                                             <constraint firstItem="TFt-1K-re3" firstAttribute="top" secondItem="GFF-Hk-6TH" secondAttribute="bottom" constant="29.329999999999998" id="AO1-hA-VOA"/>
+                                            <constraint firstItem="j5j-4c-dGk" firstAttribute="top" secondItem="TFt-1K-re3" secondAttribute="bottom" constant="15" id="HsC-VJ-FIe"/>
                                             <constraint firstItem="TFt-1K-re3" firstAttribute="centerY" secondItem="Hdr-GW-Mqv" secondAttribute="centerY" id="Yic-O8-nmd"/>
                                             <constraint firstItem="TFt-1K-re3" firstAttribute="centerX" secondItem="Hdr-GW-Mqv" secondAttribute="centerX" id="c8y-iD-uch"/>
+                                            <constraint firstItem="14g-se-h0g" firstAttribute="top" secondItem="GFF-Hk-6TH" secondAttribute="bottom" constant="2" id="kyd-AA-WEn"/>
+                                            <constraint firstItem="14g-se-h0g" firstAttribute="centerX" secondItem="Hdr-GW-Mqv" secondAttribute="centerX" id="poM-bT-X9w"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="R1V-B9-4st">
@@ -305,13 +340,15 @@
                         <viewLayoutGuide key="safeArea" id="4ta-eq-Eu5"/>
                     </view>
                     <connections>
+                        <outlet property="emailErrorLabel" destination="14g-se-h0g" id="RSf-cm-ur5"/>
                         <outlet property="emailTextField" destination="GFF-Hk-6TH" id="3As-c3-5k7"/>
+                        <outlet property="errorLabel" destination="j5j-4c-dGk" id="vhI-3I-lpr"/>
                         <outlet property="sendEmailButton" destination="TFt-1K-re3" id="Yrk-L3-8iE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FAK-fQ-aG8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="880.79999999999995" y="0.0"/>
+            <point key="canvasLocation" x="981.60000000000002" y="-0.44977511244377816"/>
         </scene>
     </scenes>
     <resources>
