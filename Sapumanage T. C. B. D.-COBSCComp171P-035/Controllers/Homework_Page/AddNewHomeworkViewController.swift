@@ -30,7 +30,20 @@ class AddNewHomeworkViewController: UIViewController {
     
 
     @IBAction func saveButtonClicked(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        
+        let homeworkOne = Homework(json: ["homeworkTitle": "Complete iOS Assignment", "homeworkCategory": "Acadamic", "homeworkDesc": "Completed"])
+        
+        let homeworkArray = [homeworkOne]
+        
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: homeworkArray)
+        UserDefaults.standard.set(encodedData, forKey: "homeworkList")
+
+        let decodedArray = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: "homeworkList") as! Data) as! [Homework]
+       
+        print("\(decodedArray[0].homeworkTitle)\(decodedArray[0].homeworkDesc)")
+
+    
+        
     }
     
     @IBAction func cancelButtonClicked(_ sender: Any) {

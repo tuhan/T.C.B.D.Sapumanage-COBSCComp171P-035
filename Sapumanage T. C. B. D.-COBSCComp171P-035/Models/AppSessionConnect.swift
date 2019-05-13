@@ -8,14 +8,16 @@
 
 import Foundation
 
-//enum UserData: String {
-//
+enum SessionKeys: String {
+
+    case myHomework = "homeworkArray"
+    
 //    case username = "USERNAME"
 //    case userID = "USERID"
 //    case userFB = "USERID"
 //    case userBirthday = "USERID"
-//
-//}s
+
+}
 
 class AppSessionConnect {
     //TODO: FALSE

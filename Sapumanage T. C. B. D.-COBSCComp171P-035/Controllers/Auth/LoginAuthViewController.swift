@@ -46,6 +46,8 @@ class LoginAuthViewController: UIViewController {
         if AppSessionConnect.passwordResetMailSent == true {
             self.usernameErrorLabel.text = "Password Reset Mail Sent! Please Log In."
             self.usernameErrorLabel.isHidden = false
+            self.passwordTxt.text = ""
+            self.usernameTxt.text = ""
         }
         else
         {
@@ -63,6 +65,7 @@ class LoginAuthViewController: UIViewController {
             else
             {
                 AppSessionConnect.activeSession = true
+                AppSessionConnect.passwordResetMailSent = false
                 self?.dismiss(animated: true, completion: nil)
             }
         }
