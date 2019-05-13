@@ -1152,11 +1152,20 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OXA-vT-h1N">
+                                                <rect key="frame" x="127.5" y="53" width="120" height="30"/>
+                                                <state key="normal" title="View Profile Page"/>
+                                                <connections>
+                                                    <action selector="viewProfileButtonClicked:" destination="wGB-mW-XzC" eventType="touchUpInside" id="RlZ-hX-acP"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="OXA-vT-h1N" firstAttribute="centerX" secondItem="dAG-gT-uBG" secondAttribute="centerX" id="0Iy-Rj-Nzl"/>
                                             <constraint firstItem="NdY-Vl-y8P" firstAttribute="centerX" secondItem="dAG-gT-uBG" secondAttribute="centerX" id="GsS-Cr-Xab"/>
                                             <constraint firstItem="NdY-Vl-y8P" firstAttribute="top" secondItem="dAG-gT-uBG" secondAttribute="top" constant="8" id="lvB-wr-yCL"/>
+                                            <constraint firstItem="OXA-vT-h1N" firstAttribute="top" secondItem="NdY-Vl-y8P" secondAttribute="bottom" constant="24" id="rl5-tP-2nB"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lm4-gP-YTk">
@@ -1181,6 +1190,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="UFM-M0-kuD"/>
                     <connections>
+                        <outlet property="pageMainLabel" destination="NdY-Vl-y8P" id="Y35-Yi-CR1"/>
+                        <outlet property="viewProfileButton" destination="OXA-vT-h1N" id="9Xg-hY-6Ge"/>
                         <segue destination="3Ix-AP-I8m" kind="presentation" identifier="ShowProfileInfoSegue" id="cL6-Xm-ieK"/>
                     </connections>
                 </viewController>

@@ -10,12 +10,14 @@ import UIKit
 
 class BioAuthViewController: UIViewController {
 
+    @IBOutlet weak var pageMainLabel: UILabel!
+    @IBOutlet weak var viewProfileButton: UIButton!
     let BioAuth = BiometricIDAuth ()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.viewProfileButton.isHidden = true
         
     }
     
@@ -28,14 +30,19 @@ class BioAuthViewController: UIViewController {
         else
         {
             if AppSessionConnect.bioAuth == true {
-                self.performSegue(withIdentifier: "ShowProfileInfoSegue", sender: nil)
+                self.viewProfileButton.isHidden = false
             }
             else
             {
+                self.viewProfileButton.isHidden = true
                 authenticator();
             }
         }
         
+    }
+    
+    @IBAction func viewProfileButtonClicked(_ sender: Any) {
+        authenticator()
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -54,10 +61,11 @@ class BioAuthViewController: UIViewController {
             else
             {
                 AppSessionConnect.bioAuth = true
+                self?.viewProfileButton.isHidden = true
                 self!.performSegue(withIdentifier: "ShowProfileInfoSegue", sender: nil)
             }
         }
-        
+        self.viewProfileButton.isHidden = false
     }
 
     

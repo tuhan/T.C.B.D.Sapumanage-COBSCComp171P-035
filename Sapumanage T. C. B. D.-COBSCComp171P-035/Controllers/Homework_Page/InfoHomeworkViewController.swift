@@ -26,7 +26,8 @@ class InfoHomeworkViewController: UIViewController {
         self.homeworkTitleTextField.text = selectedHomework.homeworkTitle
         self.homeworkDescription.text = selectedHomework.homeworkDesc
         
-        if selectedHomework.homeworkCategory == "Acadamic"{
+        if selectedHomework.homeworkCategory == "Acadamic"
+        {
             homeworkCategorySwitch.setOn(true, animated: true)
         }
         else

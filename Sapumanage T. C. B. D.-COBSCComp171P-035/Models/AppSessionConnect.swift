@@ -22,7 +22,10 @@ enum SessionKeys: String {
 class AppSessionConnect {
     //TODO: FALSE
     public static var activeSession: Bool = true
+    
+    // BioAuth Related
     public static var bioAuth: Bool = false
+    public static var bioAuthOnce: Bool = false
     
     public static var passwordResetMailSent: Bool = false
     

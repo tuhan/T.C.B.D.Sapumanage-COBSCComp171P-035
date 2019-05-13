@@ -19,14 +19,14 @@ class MyProfileViewController: UIViewController {
     
     
     @IBAction func doneButtonClicked(_ sender: Any) {
-        AppSessionConnect.bioAuth = false
+        AppSessionConnect.bioAuth = true
         self.dismiss(animated: true, completion: nil)
     }
 
     @IBAction func signoutButtonClicked(_ sender: Any) {
 
-        print ("It's Working")
         do {
+            AppSessionConnect.bioAuth = true
             AppSessionConnect.activeSession = false
             try Auth.auth().signOut()
             self.dismiss(animated: true, completion: nil)
