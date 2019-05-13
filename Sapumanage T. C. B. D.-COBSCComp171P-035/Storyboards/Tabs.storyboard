@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="Gdx-qs-AHy" customClass="HomeworkViewController" customModule="Sapumanage_T__C__B__D__COBSCComp171P_035" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zfa-IN-Nvr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuhan Sapumanage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X09-Du-btO">
-                                <rect key="frame" x="16" y="75" width="245" height="21"/>
+                                <rect key="frame" x="16" y="11" width="245" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="245" id="2s5-lo-Qvy"/>
                                     <constraint firstAttribute="height" constant="21" id="Jq5-V7-84H"/>
@@ -29,7 +29,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6C4-pr-tDg">
-                                <rect key="frame" x="296" y="69" width="63" height="34"/>
+                                <rect key="frame" x="296" y="5" width="63" height="34"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="D2d-Kw-YVJ"/>
                                     <constraint firstAttribute="width" constant="63" id="xLg-ZE-0nw"/>
@@ -41,14 +41,14 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SBI-Ta-tvQ">
-                                <rect key="frame" x="0.0" y="103" width="375" height="515"/>
+                                <rect key="frame" x="0.0" y="39" width="375" height="515"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeworkTableViewCell" rowHeight="87" id="I3z-03-TDH" customClass="HomeworkTableViewCell" customModule="Sapumanage_T__C__B__D__COBSCComp171P_035" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="375" height="87"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeworkTableViewCell" rowHeight="73" id="I3z-03-TDH" customClass="HomeworkTableViewCell" customModule="Sapumanage_T__C__B__D__COBSCComp171P_035" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="73"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="I3z-03-TDH" id="NeA-CR-lJx">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="72.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Homework Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Hs-gP-7aV">
@@ -61,11 +61,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Application to be finished by Mid-May for Submission" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDE-ZG-tqZ">
-                                                    <rect key="frame" x="15" y="33" width="345" height="48"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="iOS Application to be finished by Mid-May for Submission" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kDE-ZG-tqZ">
+                                                    <rect key="frame" x="15" y="33" width="345" height="31"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="48" id="EOq-gY-x8L"/>
-                                                        <constraint firstAttribute="width" constant="345" id="JvJ-BO-M0L"/>
+                                                        <constraint firstAttribute="height" constant="31" id="EKh-hg-Zig"/>
+                                                        <constraint firstAttribute="width" constant="345" id="Kw0-9c-nR7"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -79,13 +79,14 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="kDE-ZG-tqZ" firstAttribute="leading" secondItem="NeA-CR-lJx" secondAttribute="leading" constant="15" id="3Df-dJ-rDw"/>
+                                                <constraint firstAttribute="trailing" secondItem="kDE-ZG-tqZ" secondAttribute="trailing" constant="15" id="3Fy-lM-sfC"/>
                                                 <constraint firstItem="YZT-Ap-tYR" firstAttribute="top" secondItem="NeA-CR-lJx" secondAttribute="topMargin" id="8sg-Wp-XZs"/>
                                                 <constraint firstItem="YZT-Ap-tYR" firstAttribute="leading" secondItem="0Hs-gP-7aV" secondAttribute="trailing" constant="40" id="ADS-7I-f9M"/>
-                                                <constraint firstItem="kDE-ZG-tqZ" firstAttribute="top" secondItem="0Hs-gP-7aV" secondAttribute="bottom" constant="1" id="S5I-lu-7od"/>
                                                 <constraint firstItem="YZT-Ap-tYR" firstAttribute="trailing" secondItem="NeA-CR-lJx" secondAttribute="trailingMargin" id="aNx-ti-4NK"/>
+                                                <constraint firstItem="kDE-ZG-tqZ" firstAttribute="top" secondItem="0Hs-gP-7aV" secondAttribute="bottom" constant="1" id="cQA-Mu-Qqw"/>
                                                 <constraint firstItem="0Hs-gP-7aV" firstAttribute="leading" secondItem="NeA-CR-lJx" secondAttribute="leadingMargin" id="e3N-cB-d63"/>
                                                 <constraint firstItem="0Hs-gP-7aV" firstAttribute="top" secondItem="NeA-CR-lJx" secondAttribute="topMargin" id="p1J-Fh-1uJ"/>
-                                                <constraint firstItem="kDE-ZG-tqZ" firstAttribute="centerX" secondItem="NeA-CR-lJx" secondAttribute="centerX" id="uxq-TJ-hUm"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -115,9 +116,10 @@
                         <viewLayoutGuide key="safeArea" id="KEp-eh-kdb"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Homework" largeTitleDisplayMode="never" id="iI0-Cp-kbl"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
                         <outlet property="tableView" destination="SBI-Ta-tvQ" id="ppL-nl-d56"/>
-                        <segue destination="KQf-Hf-M0C" kind="presentation" identifier="HomeworkInfoSegue" id="8Qn-X6-47L"/>
+                        <segue destination="KQf-Hf-M0C" kind="showDetail" identifier="HomeworkInfoSegue" id="8Qn-X6-47L"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dBV-fS-OPJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -125,10 +127,10 @@
             </objects>
             <point key="canvasLocation" x="1954.4000000000001" y="166.8665667166417"/>
         </scene>
-        <!--Storyboard Reference-->
+        <!--ViewHomework-->
         <scene sceneID="0he-m1-X33">
             <objects>
-                <viewControllerPlaceholder id="KQf-Hf-M0C" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="ViewHomework" id="KQf-Hf-M0C" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ju8-cw-QXK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2815" y="116"/>

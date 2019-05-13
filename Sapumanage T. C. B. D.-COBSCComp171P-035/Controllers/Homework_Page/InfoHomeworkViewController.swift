@@ -14,19 +14,64 @@ class InfoHomeworkViewController: UIViewController {
     @IBOutlet weak var homeworkTitleTextField: UITextField!
     @IBOutlet weak var homeworkDescription: UITextView!
     @IBOutlet weak var homeworkCategorySwitch: UISwitch!
-    
-    var selectedHomework: Homework?
+
+    var selectedHomeworkIndex: Int?
+    var homeworkArray = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: "homeworkList") as! Data) as! [Homework]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        self.homeworkTitleTextField.text = selectedHomework?.homeworkTitle
-        self.homeworkDescription.text = selectedHomework?.homeworkDesc
         
+        var selectedHomework = homeworkArray [selectedHomeworkIndex!]
+        
+        self.homeworkTitleTextField.text = selectedHomework.homeworkTitle
+        self.homeworkDescription.text = selectedHomework.homeworkDesc
+        
+        if selectedHomework.homeworkCategory == "Acadamic"{
+            homeworkCategorySwitch.setOn(true, animated: true)
+        }
+        else
+        {
+            homeworkCategorySwitch.setOn(false, animated: true)
+        }
         
     }
     
-
+    @IBAction func saveInfoButtonClicked(_ sender: Any) {
+        
+        var homeworkType: String = ""
+        
+        if homeworkCategorySwitch.isOn {
+            homeworkType = "Acadamic"
+        }
+        else
+        {
+            homeworkType = "Non-Acadamic"
+        }
+        
+        let updatedHomework = Homework(json: ["homeworkTitle": homeworkTitleTextField.text, "homeworkCategory": homeworkType, "homeworkDesc": homeworkDescription.text])
+        
+        
+        homeworkArray[selectedHomeworkIndex!] = updatedHomework
+        
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: homeworkArray)
+        UserDefaults.standard.set(encodedData, forKey: "homeworkList")
+        
+        self.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    @IBAction func deleteNoteClicked(_ sender: Any) {
+        homeworkArray.remove(at: selectedHomeworkIndex!)
+        
+        let encodedData = NSKeyedArchiver.archivedData(withRootObject: homeworkArray)
+        UserDefaults.standard.set(encodedData, forKey: "homeworkList")
+        
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @IBAction func cancelButtonClicked(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     /*
     // MARK: - Navigation
 

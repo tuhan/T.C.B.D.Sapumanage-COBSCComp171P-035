@@ -40,7 +40,7 @@ class HomeworkViewController: UIViewController, UITableViewDelegate, UITableView
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        return 87;
+        return 73;
     }
 
 }
@@ -49,7 +49,7 @@ extension HomeworkViewController {
     
     // FROM TABLE VIEW DELEGATE
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "HomeworkInfoSegue", sender: homeworkArray[indexPath.row])
+        self.performSegue(withIdentifier: "HomeworkInfoSegue", sender: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -59,9 +59,9 @@ extension HomeworkViewController {
         // VALIDATING WHICH SEGUE WHEN THERE ARE MULTIPLE SEGUES
         if segue.identifier == "HomeworkInfoSegue" {
             
-            let selectedHomeworkItem = sender as! Homework
+            let indexPassed: Int = sender as! Int
             let destinationVC = segue.destination as! InfoHomeworkViewController // INITIALIZING LANDING VIEW CONTROLLER
-            destinationVC.selectedHomework = selectedHomeworkItem
+            destinationVC.selectedHomeworkIndex = indexPassed
             
         }
         
