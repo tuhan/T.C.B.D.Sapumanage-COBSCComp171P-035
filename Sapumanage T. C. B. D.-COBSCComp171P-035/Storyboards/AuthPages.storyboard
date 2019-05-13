@@ -198,6 +198,7 @@
                         <outlet property="passwordTxt" destination="axr-rh-iCy" id="HPn-GB-dEy"/>
                         <outlet property="usernameErrorLabel" destination="gN8-Te-jSp" id="dIr-Hb-RIN"/>
                         <outlet property="usernameTxt" destination="NOg-OV-tBl" id="NFb-eg-YHy"/>
+                        <outlet property="welcomeHeader" destination="AFb-n9-Wea" id="0Ai-BO-ukh"/>
                         <segue destination="al7-o5-358" kind="presentation" identifier="PasswordResetSegue" id="T9K-gH-DP7"/>
                     </connections>
                 </viewController>

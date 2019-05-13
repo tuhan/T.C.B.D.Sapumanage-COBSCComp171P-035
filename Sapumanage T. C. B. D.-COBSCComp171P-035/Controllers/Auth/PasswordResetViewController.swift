@@ -40,6 +40,7 @@ class PasswordResetViewController: UIViewController {
             }
             else
             {
+                AppSessionConnect.passwordResetMailSent = true
                 self.dismiss(animated: true, completion: nil)
             }
         }

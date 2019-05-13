@@ -19,6 +19,7 @@ class LoginAuthViewController: UIViewController {
     @IBOutlet weak var usernameErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
     
+    @IBOutlet weak var welcomeHeader: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,10 +35,22 @@ class LoginAuthViewController: UIViewController {
         
         self.passwordTxt.isHidden = true
         self.loginButton.isHidden = true
+    
         
         addKeyboardToolBarUsernameField()
         addKeyboardToolBarPasswordField()
-        
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if AppSessionConnect.passwordResetMailSent == true {
+            self.usernameErrorLabel.text = "Password Reset Mail Sent! Please Log In."
+            self.usernameErrorLabel.isHidden = false
+        }
+        else
+        {
+            
+        }
     }
     
     @IBAction func loginButtonClicked(_ sender: Any) {
@@ -71,8 +84,11 @@ extension LoginAuthViewController: UITextFieldDelegate {
             }
         }else
         {
-            self.usernameErrorLabel.isHidden = false
-            self.passwordTxt.isHidden = true
+            UIView.animate(withDuration: 0.5){
+                self.usernameErrorLabel.text = "Please enter an valid Email Address"
+                self.usernameErrorLabel.isHidden = false
+                self.passwordTxt.isHidden = true
+            }
         }
     }
     
@@ -84,8 +100,10 @@ extension LoginAuthViewController: UITextFieldDelegate {
             }
         }else
         {
-            self.passwordErrorLabel.isHidden = false
-            self.loginButton.isHidden = true
+            UIView.animate(withDuration: 0.5){
+                self.passwordErrorLabel.isHidden = false
+                self.loginButton.isHidden = true
+            }
         }
 
     }
