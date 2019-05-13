@@ -35,6 +35,9 @@ class LoginAuthViewController: UIViewController {
         self.passwordTxt.isHidden = true
         self.loginButton.isHidden = true
         
+        addKeyboardToolBarUsernameField()
+        addKeyboardToolBarPasswordField()
+        
     }
     
     @IBAction func loginButtonClicked(_ sender: Any) {
@@ -56,11 +59,6 @@ class LoginAuthViewController: UIViewController {
     @IBAction func forgotPasswordClicked(_ sender: Any) {
         self.performSegue(withIdentifier: "PasswordResetSegue", sender: nil)
     }
-    
-    func addToolBar () {
-        
-    }
-    
 }
 
 extension LoginAuthViewController: UITextFieldDelegate {
@@ -100,6 +98,52 @@ extension LoginAuthViewController: UITextFieldDelegate {
     func passwordRegexValidator(passwordValidator: String) -> Bool {
         let regex = try! NSRegularExpression(pattern: "^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{6,15}$", options: [.caseInsensitive])
         return regex.numberOfMatches(in: passwordValidator, options: [], range: NSMakeRange(0, passwordValidator.characters.count)) > 0
+    }
+    
+}
+
+// For Keyboard Toolbar
+extension LoginAuthViewController {
+    
+    func addKeyboardToolBarUsernameField() {
+        let toolbarStatus = UIToolbar()
+        toolbarStatus.sizeToFit()
+        
+        let clearButton = UIBarButtonItem(title: "Clear", style: .plain, target: nil, action: #selector(clearSelect))
+        let doneStatusButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneSelect))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolbarStatus.setItems([clearButton, spaceButton, doneStatusButton], animated: false)
+        
+        self.usernameTxt.inputAccessoryView = toolbarStatus
+    }
+    
+    func addKeyboardToolBarPasswordField() {
+        let toolbarStatus = UIToolbar()
+        toolbarStatus.sizeToFit()
+        
+        let clearButton = UIBarButtonItem(title: "Clear", style: .plain, target: nil, action: #selector(clearSelectPsd))
+        let doneStatusButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneSelectPsd))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolbarStatus.setItems([clearButton, spaceButton, doneStatusButton], animated: false)
+        
+        self.passwordTxt.inputAccessoryView = toolbarStatus
+    }
+    
+    @objc func doneSelect() {
+        self.view.endEditing(true)
+    }
+    
+    @objc func clearSelect() {
+        self.usernameTxt.text = ""
+    }
+    
+    @objc func clearSelectPsd() {
+        self.passwordTxt.text = ""
+    }
+    
+    @objc func doneSelectPsd() {
+        loginButtonClicked (UIButton.self)
+        self.view.endEditing(true)
     }
     
 }

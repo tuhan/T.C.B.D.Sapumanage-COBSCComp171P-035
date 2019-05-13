@@ -26,6 +26,7 @@ class PasswordResetViewController: UIViewController {
         
         self.emailTextField.addTarget(self, action: #selector(usernameTextFeildChanged), for: .editingChanged)
 
+        addKeyboardToolBarUsernameField()
         
     }
     
@@ -69,6 +70,30 @@ extension PasswordResetViewController: UITextFieldDelegate {
         let regex = try! NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}", options: [.caseInsensitive])
         return regex.numberOfMatches(in: usernameValidator, options: [], range: NSMakeRange(0, usernameValidator.characters.count)) > 0
     }
+}
+
+// Setting up keyboard toolbars
+extension PasswordResetViewController {
     
+    func addKeyboardToolBarUsernameField() {
+        let toolbarStatus = UIToolbar()
+        toolbarStatus.sizeToFit()
+        
+        let clearButton = UIBarButtonItem(title: "Clear", style: .plain, target: nil, action: #selector(clearSelect))
+        let doneStatusButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneSelect))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolbarStatus.setItems([clearButton, spaceButton, doneStatusButton], animated: false)
+        
+        self.emailTextField.inputAccessoryView = toolbarStatus
+    }
+    
+    @objc func doneSelect() {
+        sendEmailButtonClicked (UIButton.self)
+        self.view.endEditing (true)
+    }
+    
+    @objc func clearSelect() {
+        self.emailTextField.text = ""
+    }
     
 }
