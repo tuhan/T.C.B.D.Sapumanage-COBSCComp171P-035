@@ -52,6 +52,10 @@ class StudentInfoViewController: UIViewController {
             phoneNumberLabel.text = "\(phoneNumber)"
         }
         
+        if let emailAddress = studentInfo.studentEmailAddress {
+            emailLabel.text = "\(emailAddress)"
+        }
+        
         if let currentCity = studentInfo.studentCity {
             currentCityLabel.text = "\(currentCity)"
         }

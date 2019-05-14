@@ -17,19 +17,21 @@ class Student {
     var studentPhoneNumber: String!
     var studentBirthday: String?
     var studentBatchName: String!
+    var studentEmailAddress: String!
     var studentCity: String!
     var studentWorkplace: String!
     var studentUsernameFB: String?
     var studentDpURL : String?
     var studentDp: UIImage?
     
-    init (studentID: String, studentFirstName: String, studentLastName: String, studentPhoneNumber: String, studentBatchName: String, studentCity: String, studentWorkplace: String) {
+    init (studentID: String, studentFirstName: String, studentLastName: String, studentPhoneNumber: String, studentBatchName: String, studentEmailAddress: String, studentCity: String, studentWorkplace: String) {
         
         self.studentID = studentID
         self.studentFirstName = studentFirstName
         self.studentLastName = studentLastName
         self.studentPhoneNumber = studentPhoneNumber
         self.studentBatchName = studentBatchName //Taken from Firebase so no Enum Required
+        self.studentEmailAddress = studentEmailAddress
         self.studentCity = studentCity
         self.studentWorkplace = studentWorkplace
         
