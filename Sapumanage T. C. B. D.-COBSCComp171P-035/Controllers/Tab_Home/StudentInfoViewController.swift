@@ -17,7 +17,14 @@ class StudentInfoViewController: UIViewController {
     @IBOutlet weak var batchNameLabel: UILabel!
 
     @IBOutlet weak var phoneNumberLabel: UILabel!
+    @IBOutlet weak var birthdayLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+    @IBOutlet weak var currentCityLabel: UILabel!
+    @IBOutlet weak var workplaceLabel: UILabel!
 
+    @IBOutlet weak var fbLogoImageView: UIImageView!
+    @IBOutlet weak var fbUsernameButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +44,38 @@ class StudentInfoViewController: UIViewController {
             batchNameLabel.text = "\(batchName)"
         }
         
+        if let birthday = studentInfo.studentBirthday {
+            birthdayLabel.text = "\(birthday)"
+        }
+        
+        if let phoneNumber = studentInfo.studentPhoneNumber {
+            phoneNumberLabel.text = "\(phoneNumber)"
+        }
+        
+        if let currentCity = studentInfo.studentCity {
+            currentCityLabel.text = "\(currentCity)"
+        }
+        
+        if let workplace = studentInfo.studentWorkplace {
+            workplaceLabel.text = "\(workplace)"
+        }
+        
+        if let fbUsername = studentInfo.studentUsernameFB {
+            
+            if fbUsername != ""
+            {
+                fbLogoImageView.isHidden = false
+                fbUsernameButton.isHidden = false
+                fbUsernameButton.setTitle("@\(fbUsername)", for: .normal)
+            }
+            else
+            {
+                fbLogoImageView.isHidden = true
+                fbUsernameButton.isHidden = true
+            }
+            
+        }
+        
         
     }
     
@@ -52,7 +91,7 @@ class StudentInfoViewController: UIViewController {
         let fbURL: String = "https://www.facebook.com/\(studentInfo.studentUsernameFB ?? "")"
         
         guard let url = URL(string: fbURL) else {
-            return //be safe
+            return // Handling Possible Errors that Might Arise
         }
         
         if #available(iOS 10.0, *) {

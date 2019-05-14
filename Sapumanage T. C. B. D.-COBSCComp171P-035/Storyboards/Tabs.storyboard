@@ -764,9 +764,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="batchNameLabel" destination="yUh-qR-kc2" id="DnZ-fK-kOb"/>
+                        <outlet property="birthdayLabel" destination="Wy7-NE-6b0" id="O7c-kF-AZ7"/>
+                        <outlet property="currentCityLabel" destination="rMV-8v-4dz" id="pjH-Mz-jds"/>
                         <outlet property="dpImageView" destination="Jrd-3G-uqr" id="83Q-d2-jh3"/>
+                        <outlet property="emailLabel" destination="EZv-Gf-DF7" id="Ad2-sQ-Pmt"/>
+                        <outlet property="fbLogoImageView" destination="zGh-Ek-dsP" id="kSp-8Q-dDF"/>
+                        <outlet property="fbUsernameButton" destination="dYz-3r-6rU" id="DZ7-iC-4RY"/>
                         <outlet property="fullNameLabel" destination="ujd-0z-0mn" id="rOR-tS-JU0"/>
-                        <outlet property="phoneNumberLabel" destination="Wy7-NE-6b0" id="fmv-8F-7s4"/>
+                        <outlet property="phoneNumberLabel" destination="xC3-3G-Yb3" id="kiR-tp-Rrx"/>
+                        <outlet property="workplaceLabel" destination="Nvg-ke-mkG" id="xFV-qZ-Kaj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MZa-uY-iWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
