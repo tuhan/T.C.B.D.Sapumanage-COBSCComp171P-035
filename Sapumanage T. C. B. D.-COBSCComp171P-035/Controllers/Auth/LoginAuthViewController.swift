@@ -64,6 +64,7 @@ class LoginAuthViewController: UIViewController {
             }
             else
             {
+                AppSessionConnect.currentLoggedInUser = self!.usernameTxt.text!
                 AppSessionConnect.activeSession = true
                 AppSessionConnect.passwordResetMailSent = false
                 self?.dismiss(animated: true, completion: nil)

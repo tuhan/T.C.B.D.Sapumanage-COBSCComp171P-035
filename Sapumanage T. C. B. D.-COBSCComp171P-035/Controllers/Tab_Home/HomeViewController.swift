@@ -29,7 +29,8 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         ref = Database.database().reference()
         self.ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as! NSDictionary
-            print(value)
+
+            // Any Print Statement if Needed to Debug
             
             var tempStudentArray: [Student] = []
             

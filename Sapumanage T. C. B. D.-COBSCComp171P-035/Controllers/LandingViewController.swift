@@ -14,7 +14,6 @@ class LandingViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    
 
     override func viewDidAppear(_ animated: Bool) {
         
