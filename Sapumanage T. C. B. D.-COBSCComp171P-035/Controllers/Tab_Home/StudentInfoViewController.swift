@@ -20,8 +20,24 @@ class StudentInfoViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        if let dpURL = studentInfo.studentDpURL {
+            dpImageView.layer.cornerRadius = 22.5
+            let url = URL(string: dpURL)
+            dpImageView.kf.setImage(with: url)
+        }
+        
+        if let firstName = studentInfo.studentFirstName {
+            if let lastName = studentInfo.studentLastName{
+                fullNameLabel.text = "\(firstName) \(lastName)"
+            }
+        }
+        
+        if let batchName = studentInfo.studentBatchName {
+            batchNameLabel.text = "\(batchName)"
+        }
+        
+        
     }
     
 
@@ -33,7 +49,9 @@ class StudentInfoViewController: UIViewController {
     //Redirect when profile username is clicked
     @IBAction func fbButtonClicked(_ sender: Any) {
         
-        guard let url = URL(string: studentInfo.studentUrlFB!) else {
+        let fbURL: String = "https://www.facebook.com/\(studentInfo.studentUsernameFB ?? "")"
+        
+        guard let url = URL(string: fbURL) else {
             return //be safe
         }
         
