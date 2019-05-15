@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuhan Sapumanage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X09-Du-btO">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NIBM Connect" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X09-Du-btO">
                                 <rect key="frame" x="16" y="11" width="245" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="245" id="2s5-lo-Qvy"/>
@@ -102,7 +102,7 @@
                                 </connections>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="KEp-eh-kdb" firstAttribute="trailing" secondItem="6C4-pr-tDg" secondAttribute="trailing" constant="16" id="0Pf-BP-Z1i"/>
                             <constraint firstItem="SBI-Ta-tvQ" firstAttribute="leading" secondItem="zfa-IN-Nvr" secondAttribute="leading" id="8N6-AY-xt8"/>
@@ -306,14 +306,14 @@
                                                                 <rect key="frame" x="0.0" y="0.0" width="231" height="72"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BmU-3b-74H">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="231" height="14.5"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="231" height="18"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fwR-6P-Tdd">
-                                                                        <rect key="frame" x="0.0" y="14.5" width="231" height="14"/>
+                                                                        <rect key="frame" x="0.0" y="18" width="231" height="18"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuhan Sapumanage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ujd-0z-0mn">
-                                                                                <rect key="frame" x="-4" y="-3.5" width="239" height="21"/>
+                                                                                <rect key="frame" x="-4" y="-1.5" width="239" height="21"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="21" id="E3M-p8-pEc"/>
                                                                                     <constraint firstAttribute="width" constant="239" id="iPz-HX-LLA"/>
@@ -332,10 +332,10 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNo-OY-mgc">
-                                                                        <rect key="frame" x="0.0" y="28.5" width="231" height="14.5"/>
+                                                                        <rect key="frame" x="0.0" y="36" width="231" height="18"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BSc (Hons) Computing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yUh-qR-kc2">
-                                                                                <rect key="frame" x="-4" y="-3" width="239" height="21"/>
+                                                                                <rect key="frame" x="-4" y="-1.5" width="239" height="21"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="239" id="A0e-Mh-Su9"/>
                                                                                     <constraint firstAttribute="height" constant="21" id="O7n-GH-bXD"/>
@@ -351,12 +351,8 @@
                                                                             <constraint firstItem="yUh-qR-kc2" firstAttribute="centerY" secondItem="wNo-OY-mgc" secondAttribute="centerY" id="qhS-pk-Q5J"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dFz-Px-HPx">
-                                                                        <rect key="frame" x="0.0" y="43" width="231" height="14.5"/>
-                                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Swe-Lt-jNW">
-                                                                        <rect key="frame" x="0.0" y="57.5" width="231" height="14.5"/>
+                                                                        <rect key="frame" x="0.0" y="54" width="231" height="18"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                     </view>
                                                                 </subviews>

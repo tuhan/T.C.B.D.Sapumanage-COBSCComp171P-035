@@ -28,6 +28,10 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         getStudentList()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        getStudentList()
+    }
+    
     func showLoading () {
         self.activityIndicatorView.isHidden = false
         self.activityIndicatorIcon.startAnimating()
@@ -64,7 +68,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
                         
                         let student = Student(studentID: incomingStudentObject["id"] as! String, studentFirstName: incomingStudentObject["firstName"] as! String, studentLastName: incomingStudentObject["lastName"] as! String, studentPhoneNumber: incomingStudentObject["phoneNumber"] as! String, studentBatchName: incomingStudentObject["batchName"] as! String, studentEmailAddress: incomingStudentObject["email"] as! String, studentCity: incomingStudentObject["city"] as! String, studentWorkplace: incomingStudentObject["workplace"] as! String)
                         
-                        if incomingStudentObject["dpURL"] as! String != "null"
+                        if incomingStudentObject["dpURL"] as! String != ""
                         {
                             student.studentDpURL = incomingStudentObject["dpURL"] as? String
                         }
@@ -73,7 +77,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
                             student.studentDpURL = "https://t3.ftcdn.net/jpg/00/64/67/52/240_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
                         }
                         
-                        if incomingStudentObject["fbUsername"] as! String != "null"
+                        if incomingStudentObject["fbUsername"] as! String != ""
                         {
                             student.studentUsernameFB = incomingStudentObject["fbUsername"] as? String
                         }
@@ -127,8 +131,8 @@ extension HomeViewController: UITableViewDelegate {
             }
         }
         
-        if let mobileNumber = studentList[indexPath.row].studentPhoneNumber {
-            cell.phoneNumberLabel.text = "\(mobileNumber)"
+        if let cityName = studentList[indexPath.row].studentCity {
+            cell.phoneNumberLabel.text = "\(cityName)"
         }
         
         if let dpURL = studentList[indexPath.row].studentDpURL {
