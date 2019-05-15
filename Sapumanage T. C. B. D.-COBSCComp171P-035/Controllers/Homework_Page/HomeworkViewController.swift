@@ -20,8 +20,17 @@ class HomeworkViewController: UIViewController, UITableViewDelegate, UITableView
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        homeworkArray = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: "homeworkList") as! Data) as! [Homework]
-        self.tableView.reloadData()
+        
+        if UserDefaults.standard.object(forKey: "homeworkList") != nil {
+            homeworkArray = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: "homeworkList") as! Data) as! [Homework]
+            self.tableView.reloadData()
+        }
+        else
+        {
+            // If need say there aren't any homework to display
+        }
+        
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
