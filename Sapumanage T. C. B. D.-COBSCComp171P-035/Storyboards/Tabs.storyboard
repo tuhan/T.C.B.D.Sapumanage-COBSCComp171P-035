@@ -204,18 +204,38 @@
                                     <outlet property="delegate" destination="7tu-vN-atI" id="vV4-7f-jeK"/>
                                 </connections>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MBe-yp-cfe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="502"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="IIs-Op-pJJ">
+                                        <rect key="frame" x="177.5" y="241" width="20" height="20"/>
+                                        <color key="color" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="IIs-Op-pJJ" firstAttribute="centerY" secondItem="MBe-yp-cfe" secondAttribute="centerY" id="3qx-It-vzV"/>
+                                    <constraint firstItem="IIs-Op-pJJ" firstAttribute="centerX" secondItem="MBe-yp-cfe" secondAttribute="centerX" id="bGQ-Xa-j7p"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="m1J-Hk-3fR" firstAttribute="leading" secondItem="8Ii-n0-Vss" secondAttribute="leading" id="6KH-mN-mn2"/>
+                            <constraint firstItem="8Ii-n0-Vss" firstAttribute="bottom" secondItem="MBe-yp-cfe" secondAttribute="bottom" id="77k-to-qdd"/>
                             <constraint firstItem="m1J-Hk-3fR" firstAttribute="top" secondItem="8Ii-n0-Vss" secondAttribute="top" id="Avq-BV-iv1"/>
+                            <constraint firstItem="MBe-yp-cfe" firstAttribute="top" secondItem="8Ii-n0-Vss" secondAttribute="top" id="M3g-yn-KgM"/>
                             <constraint firstItem="m1J-Hk-3fR" firstAttribute="trailing" secondItem="8Ii-n0-Vss" secondAttribute="trailing" id="MDI-WQ-szy"/>
                             <constraint firstItem="m1J-Hk-3fR" firstAttribute="bottom" secondItem="8Ii-n0-Vss" secondAttribute="bottom" id="ZMw-5e-5OR"/>
+                            <constraint firstItem="MBe-yp-cfe" firstAttribute="leading" secondItem="8Ii-n0-Vss" secondAttribute="leading" id="a36-MM-TbZ"/>
+                            <constraint firstItem="MBe-yp-cfe" firstAttribute="trailing" secondItem="8Ii-n0-Vss" secondAttribute="trailing" id="p5G-qu-Y5R"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Ii-n0-Vss"/>
                     </view>
                     <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="IDy-nK-b2g"/>
                     <connections>
+                        <outlet property="activityIndicatorIcon" destination="IIs-Op-pJJ" id="V6P-SL-BT4"/>
+                        <outlet property="activityIndicatorView" destination="MBe-yp-cfe" id="MPs-Bz-dj7"/>
                         <outlet property="tableView" destination="m1J-Hk-3fR" id="s8x-fx-Im1"/>
                         <segue destination="GJk-ql-1XO" kind="presentation" identifier="ViewUserSegue" id="04q-Lq-Qof"/>
                     </connections>
@@ -1258,6 +1278,9 @@
                                                                             <constraint firstAttribute="height" constant="30" id="dtj-tD-TtQ"/>
                                                                         </constraints>
                                                                         <state key="normal" title="@TuhanSapumanage"/>
+                                                                        <connections>
+                                                                            <action selector="facebookUsernameButtonClicked:" destination="3Ix-AP-I8m" eventType="touchUpInside" id="fN2-ho-uLk"/>
+                                                                        </connections>
                                                                     </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1317,18 +1340,38 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pOV-3X-4Sp">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="qqd-hD-qma">
+                                        <rect key="frame" x="177.5" y="313.5" width="20" height="20"/>
+                                        <color key="color" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="qqd-hD-qma" firstAttribute="centerY" secondItem="pOV-3X-4Sp" secondAttribute="centerY" id="JDD-9h-yRI"/>
+                                    <constraint firstItem="qqd-hD-qma" firstAttribute="centerX" secondItem="pOV-3X-4Sp" secondAttribute="centerX" id="f7p-Vh-YTb"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="pOV-3X-4Sp" firstAttribute="leading" secondItem="Npi-MZ-Thy" secondAttribute="leading" id="3jD-sp-NGs"/>
+                            <constraint firstItem="pOV-3X-4Sp" firstAttribute="trailing" secondItem="Npi-MZ-Thy" secondAttribute="trailing" id="7yh-kB-PIY"/>
                             <constraint firstItem="Npi-MZ-Thy" firstAttribute="trailing" secondItem="V1V-E7-JIp" secondAttribute="trailing" id="8MQ-jR-pKk"/>
                             <constraint firstItem="V1V-E7-JIp" firstAttribute="leading" secondItem="Npi-MZ-Thy" secondAttribute="leading" id="9tI-EU-jMt"/>
+                            <constraint firstItem="Npi-MZ-Thy" firstAttribute="bottom" secondItem="pOV-3X-4Sp" secondAttribute="bottom" id="IuW-OR-yR7"/>
                             <constraint firstItem="Npi-MZ-Thy" firstAttribute="bottom" secondItem="V1V-E7-JIp" secondAttribute="bottom" id="QCR-q0-gkm"/>
                             <constraint firstItem="V1V-E7-JIp" firstAttribute="top" secondItem="Npi-MZ-Thy" secondAttribute="top" id="pOQ-Ie-yjJ"/>
+                            <constraint firstItem="pOV-3X-4Sp" firstAttribute="top" secondItem="Npi-MZ-Thy" secondAttribute="top" id="yA3-aC-3G4"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Npi-MZ-Thy"/>
                     </view>
                     <navigationItem key="navigationItem" title="My Profile" id="ccO-IC-ldx"/>
                     <connections>
+                        <outlet property="activityIndicatorIcon" destination="qqd-hD-qma" id="gYu-aG-BFx"/>
+                        <outlet property="activityIndicatorView" destination="pOV-3X-4Sp" id="yv1-Ln-CXQ"/>
                         <outlet property="ageLabel" destination="OWO-bE-boO" id="gyK-pU-d1f"/>
                         <outlet property="authActionButton" destination="WMT-4X-oYN" id="scD-SN-8Xc"/>
                         <outlet property="birthdayLabel" destination="nnq-4C-5Yn" id="89c-hv-PnP"/>

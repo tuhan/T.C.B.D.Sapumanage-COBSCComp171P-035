@@ -21,6 +21,16 @@ class InfoHomeworkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //For Description
+        self.homeworkDescription.layer.borderColor = UIColor.lightGray.cgColor
+        self.homeworkDescription.layer.borderWidth = 1.0;
+        self.homeworkDescription.layer.cornerRadius = 8;
+        
+        //For Homework Title
+        self.homeworkTitleTextField.layer.borderColor = UIColor.lightGray.cgColor
+        self.homeworkTitleTextField.layer.borderWidth = 1.0;
+        self.homeworkTitleTextField.layer.cornerRadius = 8;
+        
         var selectedHomework = homeworkArray [selectedHomeworkIndex!]
         
         self.homeworkTitleTextField.text = selectedHomework.homeworkTitle

@@ -15,6 +15,10 @@ import Kingfisher
 class HomeViewController: UIViewController, UITableViewDataSource {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var activityIndicatorView: UIView!
+    @IBOutlet weak var activityIndicatorIcon: UIActivityIndicatorView!
+    
+    
     var ref: DatabaseReference!
     
     var studentList: [Student] = []
@@ -24,7 +28,24 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         getStudentList()
     }
     
+    func showLoading () {
+        self.activityIndicatorView.isHidden = false
+        self.activityIndicatorIcon.startAnimating()
+        self.activityIndicatorIcon.isHidden = false
+    }
+    
+    func stopLoading () {
+        self.activityIndicatorView.isHidden = true
+        self.activityIndicatorIcon.stopAnimating()
+        self.activityIndicatorIcon.isHidden = true
+    }
+    
+    
     func getStudentList() {
+        
+        UIView.animate(withDuration: 0.5){
+            self.showLoading()
+        }
         
         ref = Database.database().reference()
         self.ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -78,6 +99,10 @@ class HomeViewController: UIViewController, UITableViewDataSource {
             
             self.studentList = tempStudentArray
             self.tableView.reloadData()
+            
+            UIView.animate(withDuration: 0.5){
+                self.stopLoading()
+            }
             
         }) { (error) in
             print(error.localizedDescription)

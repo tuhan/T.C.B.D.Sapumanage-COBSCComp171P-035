@@ -26,6 +26,10 @@ class MyProfileViewController: UIViewController {
     @IBOutlet weak var notLoggedInErrorLabel: UILabel!
     @IBOutlet weak var authActionButton: UIButton!
     
+    @IBOutlet weak var activityIndicatorView: UIView!
+    @IBOutlet weak var activityIndicatorIcon: UIActivityIndicatorView!
+    
+    
     var ref: DatabaseReference!
     var loggedInStudent: Student!
     
@@ -57,11 +61,33 @@ class MyProfileViewController: UIViewController {
             print (err)
         }
     }
+    
+    @IBAction func facebookUsernameButtonClicked(_ sender: Any) {
+        
+        let fbURL: String = "https://www.facebook.com/\(loggedInStudent.studentUsernameFB ?? "")"
+        
+        guard let url = URL(string: fbURL) else {
+            return // Handling Possible Errors that Might Arise
+        }
+        
+        if #available(iOS 10.0, *) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        } else {
+            UIApplication.shared.openURL(url)
+        }
+        
+    }
+    
+    
 }
 
 extension MyProfileViewController {
     
     func getMyProfileDetails() {
+        
+        UIView.animate(withDuration: 0.5){
+            self.showLoading()
+        }
         
         ref = Database.database().reference()
         self.ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -139,6 +165,9 @@ extension MyProfileViewController {
                 }
             }
             
+            UIView.animate(withDuration: 0.5){
+                self.stopLoading()
+            }
             
             
         }) { (error) in
@@ -191,9 +220,21 @@ extension MyProfileViewController {
             }
             
         }
-        
-        
-        
+
     }
+    
+    func showLoading () {
+        self.activityIndicatorView.isHidden = false
+        self.activityIndicatorIcon.startAnimating()
+        self.activityIndicatorIcon.isHidden = false
+    }
+    
+    func stopLoading () {
+        self.activityIndicatorView.isHidden = true
+        self.activityIndicatorIcon.stopAnimating()
+        self.activityIndicatorIcon.isHidden = true
+    }
+    
+    
     
 }
