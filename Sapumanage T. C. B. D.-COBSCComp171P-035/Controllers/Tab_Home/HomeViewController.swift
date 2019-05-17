@@ -25,10 +25,13 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+                
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(refreshTapped))
+
         getStudentList()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
+    @objc func refreshTapped () {
         getStudentList()
     }
     

@@ -37,7 +37,7 @@
                                 <state key="normal" title="Add New"/>
                                 <connections>
                                     <action selector="addNewClicked:" destination="pj3-Oe-RUZ" eventType="touchUpInside" id="4FC-ud-RHf"/>
-                                    <segue destination="AaQ-Xu-Mjo" kind="showDetail" id="C6F-XG-nuB"/>
+                                    <segue destination="AaQ-Xu-Mjo" kind="showDetail" identifier="AddHomeworkSegue" id="C6F-XG-nuB"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SBI-Ta-tvQ">
@@ -232,7 +232,15 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="8Ii-n0-Vss"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="IDy-nK-b2g"/>
+                    <navigationItem key="navigationItem" title="Home" largeTitleDisplayMode="always" id="IDy-nK-b2g">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="vHM-El-biE">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="lRH-Im-ItN">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="activityIndicatorIcon" destination="IIs-Op-pJJ" id="V6P-SL-BT4"/>
                         <outlet property="activityIndicatorView" destination="MBe-yp-cfe" id="MPs-Bz-dj7"/>
