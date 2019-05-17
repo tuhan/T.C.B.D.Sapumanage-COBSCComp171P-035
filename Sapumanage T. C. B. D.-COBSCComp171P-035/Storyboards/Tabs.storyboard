@@ -1494,7 +1494,7 @@
         <scene sceneID="OXe-fW-4RU">
             <objects>
                 <tabBarController id="Jv0-Ll-Wd1" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionIndicatorImage="home-icon" shadowImage="home-icon" id="2DP-6c-Fpu">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2DP-6c-Fpu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1513,7 +1513,7 @@
         <scene sceneID="Q6D-yl-Yu5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2sw-dG-bgD" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="WcR-W8-cWE"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home-icon" landscapeImage="home-icon" largeContentSizeImage="home-icon" selectedImage="home-selected-icon" id="WcR-W8-cWE"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" largeTitles="YES" id="KB4-tt-K2h">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -1535,7 +1535,7 @@
         <scene sceneID="9FC-mz-OUD">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="JOw-yl-0x8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Homework" id="836-or-Scd"/>
+                    <tabBarItem key="tabBarItem" title="Homework" image="homework-icon" landscapeImage="homework-icon" largeContentSizeImage="homework-icon" selectedImage="homework-selected-icon" id="836-or-Scd"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="2AU-Gv-q1b">
                         <rect key="frame" x="0.0" y="20" width="375" height="96"/>
@@ -1554,7 +1554,7 @@
         <scene sceneID="lwb-nf-M2p">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="VI8-7a-ll6" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Account" id="9MO-Sj-pCK"/>
+                    <tabBarItem key="tabBarItem" title="Account" image="account-icon" landscapeImage="account-icon" largeContentSizeImage="account-icon" selectedImage="account-selected-icon" id="9MO-Sj-pCK"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="vDm-8u-ouA">
                         <rect key="frame" x="0.0" y="20" width="375" height="44"/>
@@ -1571,9 +1571,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="account-icon" width="25" height="25"/>
+        <image name="account-selected-icon" width="25" height="25"/>
         <image name="facebook-logo" width="786.5" height="206.5"/>
         <image name="fingerprint-icon" width="341" height="341"/>
         <image name="home-icon" width="25" height="25"/>
+        <image name="home-selected-icon" width="25" height="25"/>
+        <image name="homework-icon" width="25" height="25"/>
+        <image name="homework-selected-icon" width="25" height="25"/>
         <image name="login-header" width="98" height="98"/>
     </resources>
 </document>

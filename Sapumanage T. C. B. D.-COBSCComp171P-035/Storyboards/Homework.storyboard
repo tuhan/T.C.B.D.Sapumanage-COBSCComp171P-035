@@ -396,15 +396,22 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mYg-jG-VXl">
                                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="120.5"/>
                                                                         <subviews>
-                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GAR-US-LWc">
-                                                                                <rect key="frame" x="20" y="0.0" width="334" height="128"/>
-                                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GAR-US-LWc">
+                                                                                <rect key="frame" x="20" y="7.5" width="335" height="105"/>
                                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="335" id="WWg-GY-XMF"/>
+                                                                                    <constraint firstAttribute="height" constant="105" id="pCK-Wb-rX5"/>
+                                                                                </constraints>
                                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                                             </textView>
                                                                         </subviews>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="GAR-US-LWc" firstAttribute="centerX" secondItem="mYg-jG-VXl" secondAttribute="centerX" id="k62-l6-nnd"/>
+                                                                            <constraint firstItem="GAR-US-LWc" firstAttribute="centerY" secondItem="mYg-jG-VXl" secondAttribute="centerY" id="zAR-mc-KUZ"/>
+                                                                        </constraints>
                                                                     </view>
                                                                 </subviews>
                                                             </stackView>

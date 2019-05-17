@@ -89,6 +89,7 @@ extension MyProfileViewController {
             self.showLoading()
         }
         
+        dpImageView.layer.cornerRadius = 52
         ref = Database.database().reference()
         self.ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as! NSDictionary
