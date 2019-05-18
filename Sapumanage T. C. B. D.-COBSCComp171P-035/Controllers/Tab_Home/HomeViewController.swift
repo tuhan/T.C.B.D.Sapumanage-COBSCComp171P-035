@@ -20,15 +20,23 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
     
     var ref: DatabaseReference!
+    var networkConnected: Bool = false
     
     var studentList: [Student] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(refreshTapped))
-
-        getStudentList()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if NetworkManagement.isConnectedToNetwork() {
+            getStudentList()
+        }
+        else{
+            displayNetworkUnavailableAlert()
+        }
     }
     
     @objc func refreshTapped () {
@@ -165,6 +173,28 @@ extension HomeViewController: UITableViewDelegate {
             
         }
         
+    }
+    
+    func displayNetworkUnavailableAlert () {
+        let alertView = UIAlertController(title: "Network Error!", message: "Unable to connect to our services because you are not connected to the Internet!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Check Network Settings", style: .default, handler: {(action: UIAlertAction!) in
+            
+            // Application target is iOS 11
+            if let url = URL(string: UIApplication.openSettingsURLString){
+                if #available(iOS 11.0, *){
+                    UIApplication.shared.open(url, completionHandler: nil)
+                }
+            }
+            
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action: UIAlertAction!) in
+            print ("Cancel Clicked")
+        })
+        
+        alertView.addAction(okAction)
+        alertView.addAction(cancelAction)
+        self.present(alertView, animated: true)
     }
     
 }

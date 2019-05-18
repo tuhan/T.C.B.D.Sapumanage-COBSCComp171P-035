@@ -35,12 +35,22 @@ class MyProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        getMyProfileDetails()
-        dpImageView.layer.cornerRadius = 52
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        
+        if NetworkManagement.isConnectedToNetwork() {
+            
+            getMyProfileDetails()
+            dpImageView.layer.cornerRadius = 52
+        }
+        else
+        {
+           displayNetworkUnavailableAlert()
+        }
+        
+    }
     
     @IBAction func doneButtonClicked(_ sender: Any) {
         AppSessionConnect.bioAuth = true
@@ -236,6 +246,31 @@ extension MyProfileViewController {
         self.activityIndicatorIcon.isHidden = true
     }
     
-    
+    func displayNetworkUnavailableAlert () {
+        let alertView = UIAlertController(title: "Network Error!", message: "Unable to connect to our services because you are not connected to the Internet!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Check Network Settings", style: .default, handler: {(action: UIAlertAction!) in
+            
+            // Application target is iOS 11
+            if let url = URL(string: UIApplication.openSettingsURLString){
+                if #available(iOS 11.0, *){
+                    UIApplication.shared.open(url, completionHandler: nil)
+                }
+            }
+            
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action: UIAlertAction!) in
+            self.doneButtonClicked(UIButton.self)
+        })
+        
+        let signoutAction = UIAlertAction(title: "Sign Out", style: .destructive, handler: {(action: UIAlertAction!) in
+            self.signoutButtonClicked(UIButton.self)
+        })
+        
+        alertView.addAction(okAction)
+        alertView.addAction(cancelAction)
+        alertView.addAction(signoutAction)
+        self.present(alertView, animated: true)
+    }
     
 }

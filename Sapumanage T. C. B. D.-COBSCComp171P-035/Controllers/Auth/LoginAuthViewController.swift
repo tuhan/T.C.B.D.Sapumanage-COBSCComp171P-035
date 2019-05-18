@@ -43,33 +43,54 @@ class LoginAuthViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if AppSessionConnect.passwordResetMailSent == true {
-            self.usernameErrorLabel.text = "Password Reset Mail Sent! Please Log In."
-            self.usernameErrorLabel.isHidden = false
-            self.passwordTxt.text = ""
-            self.usernameTxt.text = ""
-        }
-        else
-        {
-            
-        }
-    }
-    
-    @IBAction func loginButtonClicked(_ sender: Any) {
-    
-        Auth.auth().signIn(withEmail: usernameTxt.text!, password: passwordTxt.text!) { [weak self] user, error in
-            guard let strongSelf = self else { return }
-            if error != nil {
-                self!.loginErrorLabel.isHidden = false
+        
+        if NetworkManagement.isConnectedToNetwork() {
+            if AppSessionConnect.passwordResetMailSent == true {
+                self.usernameErrorLabel.text = "Password Reset Mail Sent! Please Log In."
+                self.usernameErrorLabel.isHidden = false
+                self.passwordTxt.text = ""
+                self.usernameTxt.text = ""
             }
             else
             {
-                AppSessionConnect.currentLoggedInUser = self!.usernameTxt.text!
-                AppSessionConnect.activeSession = true
-                AppSessionConnect.passwordResetMailSent = false
-                self?.dismiss(animated: true, completion: nil)
+                
             }
         }
+        else
+        {
+            displayNetworkUnavailableAlert ()
+        }
+        
+        
+    }
+    
+    @IBAction func loginButtonClicked(_ sender: Any) {
+        
+        self.view.endEditing(true)
+        
+        if NetworkManagement.isConnectedToNetwork() {
+        
+            Auth.auth().signIn(withEmail: usernameTxt.text!, password: passwordTxt.text!) { [weak self] user, error in
+                guard let strongSelf = self else { return }
+                if error != nil {
+                    self!.loginErrorLabel.isHidden = false
+                }
+                else
+                {
+                    AppSessionConnect.currentLoggedInUser = self!.usernameTxt.text!
+                    AppSessionConnect.activeSession = true
+                    AppSessionConnect.passwordResetMailSent = false
+                    self?.dismiss(animated: true, completion: nil)
+                }
+            }
+            
+        }
+        else
+        {
+            displayNetworkUnavailableAlert()
+        }
+        
+        
         
     }
     
@@ -168,4 +189,25 @@ extension LoginAuthViewController {
         self.view.endEditing(true)
     }
     
+    func displayNetworkUnavailableAlert () {
+        let alertView = UIAlertController(title: "Network Error!", message: "Unable to connect to our services because you are not connected to the Internet!", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Check Network Settings", style: .default, handler: {(action: UIAlertAction!) in
+            
+            // Application target is iOS 11
+            if let url = URL(string: UIApplication.openSettingsURLString){
+                if #available(iOS 11.0, *){
+                    UIApplication.shared.open(url, completionHandler: nil)
+                }
+            }
+            
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {(action: UIAlertAction!) in
+            print ("Cancel Clicked")
+        })
+        
+        alertView.addAction(okAction)
+        alertView.addAction(cancelAction)
+        self.present(alertView, animated: true)
+    }
 }

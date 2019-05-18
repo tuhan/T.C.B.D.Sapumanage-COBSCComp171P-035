@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		20FA625760753F31446CD440 /* Pods_Sapumanage_T__C__B__D__COBSCComp171P_035.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 902A35A5D99DC9A3C3836890 /* Pods_Sapumanage_T__C__B__D__COBSCComp171P_035.framework */; };
 		E70D27682285BB2B00606493 /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = E70D27672285BB2B00606493 /* Student.swift */; };
+		E7169C5422905BBA004B21F1 /* NetworkManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7169C5322905BBA004B21F1 /* NetworkManagement.swift */; };
 		E72AB84C22880BF500303568 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E72AB84B22880BF500303568 /* GoogleService-Info.plist */; };
 		E72AB84F22881D2200303568 /* BioAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72AB84E22881D2200303568 /* BioAuthViewController.swift */; };
 		E72AB85122881EB900303568 /* MyProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72AB85022881EB900303568 /* MyProfileViewController.swift */; };
@@ -40,6 +41,7 @@
 		902A35A5D99DC9A3C3836890 /* Pods_Sapumanage_T__C__B__D__COBSCComp171P_035.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Sapumanage_T__C__B__D__COBSCComp171P_035.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6C21BA19E1B636408941BA3 /* Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.debug.xcconfig"; path = "Target Support Files/Pods-Sapumanage T. C. B. D.-COBSCComp171P-035/Pods-Sapumanage T. C. B. D.-COBSCComp171P-035.debug.xcconfig"; sourceTree = "<group>"; };
 		E70D27672285BB2B00606493 /* Student.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		E7169C5322905BBA004B21F1 /* NetworkManagement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagement.swift; sourceTree = "<group>"; };
 		E72AB84B22880BF500303568 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E72AB84E22881D2200303568 /* BioAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioAuthViewController.swift; sourceTree = "<group>"; };
 		E72AB85022881EB900303568 /* MyProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyProfileViewController.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				E70D27672285BB2B00606493 /* Student.swift */,
 				E7F53C882287EB1E008828A2 /* AppSessionConnect.swift */,
 				E72AB85422882AB900303568 /* Homework.swift */,
+				E7169C5322905BBA004B21F1 /* NetworkManagement.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -401,6 +404,7 @@
 				E72AC9592285BF890058D742 /* LandingViewController.swift in Sources */,
 				E7D4A8FD228756330029DCC9 /* HomeViewController.swift in Sources */,
 				E72AB8532288283B00303568 /* BiometricAuthenticator.swift in Sources */,
+				E7169C5422905BBA004B21F1 /* NetworkManagement.swift in Sources */,
 				E72AB84F22881D2200303568 /* BioAuthViewController.swift in Sources */,
 				E7BD63E62287FB5500B6D46D /* StudentInfoViewController.swift in Sources */,
 				E70D27682285BB2B00606493 /* Student.swift in Sources */,
