@@ -24,7 +24,7 @@ class AppSessionConnect {
     public static var activeSession: Bool = false
     public static var currentLoggedInUser: String = ""
     
-    // BioAuth Related
+    // BioAuth Related | Default: false
     public static var bioAuth: Bool = false
     public static var bioAuthOnce: Bool = false
     
