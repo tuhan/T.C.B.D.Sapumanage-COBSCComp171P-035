@@ -20,9 +20,9 @@ enum SessionKeys: String {
 }
 
 class AppSessionConnect {
-    //TODO: FALSE
+    //TODO: FALSE & ""
     public static var activeSession: Bool = false
-    public static var currentLoggedInUser: String = "tuhancs@gmail.com" 
+    public static var currentLoggedInUser: String = ""
     
     // BioAuth Related
     public static var bioAuth: Bool = false
