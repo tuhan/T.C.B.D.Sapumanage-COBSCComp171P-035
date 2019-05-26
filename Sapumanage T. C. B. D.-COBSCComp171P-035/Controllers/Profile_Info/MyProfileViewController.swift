@@ -37,15 +37,16 @@ class MyProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.dpImageView.layer.masksToBounds = true
+        self.dpImageView.layer.cornerRadius = 52
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
         if NetworkManagement.isConnectedToNetwork() {
-            
             getMyProfileDetails()
-            dpImageView.layer.cornerRadius = 52
+            
         }
         else
         {
@@ -81,6 +82,8 @@ class MyProfileViewController: UIViewController {
         }
     }
     
+    
+    // Redirect to FB Profile
     @IBAction func facebookUsernameButtonClicked(_ sender: Any) {
         
         let fbURL: String = "https://www.facebook.com/\(loggedInStudent.studentUsernameFB ?? "")"
@@ -168,19 +171,20 @@ extension MyProfileViewController {
                         self.populateInformation ()
                         
                     }
-                    else
-                    {
-                        self.firstNameLabel.isHidden = true
-                        self.lastNameLabel.isHidden = true
-                        self.birthdayLabel.isHidden = true
-                        self.ageLabel.isHidden = true
-                        self.phoneNumberLabel.isHidden = true
-                        self.emailAddressLabel.isHidden = true
-                        
-                        self.notLoggedInErrorLabel.isHidden = false
-                        self.authActionButton.setTitle("Sign In", for: .normal)
-
-                    }
+                    // If needed in future to dynamically set user data, etc.
+//                    else
+//                    {
+//                        self.firstNameLabel.isHidden = true
+//                        self.lastNameLabel.isHidden = true
+//                        self.birthdayLabel.isHidden = true
+//                        self.ageLabel.isHidden = true
+//                        self.phoneNumberLabel.isHidden = true
+//                        self.emailAddressLabel.isHidden = true
+//
+//                        self.notLoggedInErrorLabel.isHidden = false
+//                        self.authActionButton.setTitle("Sign In", for: .normal)
+//
+//                    }
                     
                 }
             }
@@ -205,6 +209,7 @@ extension MyProfileViewController {
             lastNameLabel.text = lastName
         }
         
+        // Calculating Birthday
         if let birthday = loggedInStudent.studentBirthday {
             birthdayLabel.text = birthday
             let year: Int = Calendar.current.component(.year, from: Date())
@@ -226,6 +231,7 @@ extension MyProfileViewController {
             dpImageView.kf.setImage(with: dpURL)
         }
         
+        // Showing Facebook Username
         if let fbUsername = loggedInStudent.studentUsernameFB {
             
             if fbUsername != ""

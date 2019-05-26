@@ -29,7 +29,8 @@ class StudentInfoViewController: UIViewController {
         super.viewDidLoad()
         
         if let dpURL = studentInfo.studentDpURL {
-            dpImageView.layer.cornerRadius = 22.5
+            self.dpImageView.layer.masksToBounds = true
+            dpImageView.layer.cornerRadius = 34.5
             let url = URL(string: dpURL)
             dpImageView.kf.setImage(with: url)
         }

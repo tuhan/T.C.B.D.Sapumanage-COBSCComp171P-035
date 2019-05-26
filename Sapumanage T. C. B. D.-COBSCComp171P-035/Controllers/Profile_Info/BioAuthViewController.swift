@@ -24,6 +24,7 @@ class BioAuthViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         
+        // Checks if the biomatric authentication has taken place recently. If yes, let user to see data. If not user has to validate
         if AppSessionConnect.activeSession != true {
             self.dismiss(animated: true, completion: nil)
         }
@@ -49,6 +50,7 @@ class BioAuthViewController: UIViewController {
         AppSessionConnect.bioAuth = false
     }
     
+    // Biometric Authentication
     func authenticator () {
         
         BioAuth.authenticateUser() { [weak self] message in

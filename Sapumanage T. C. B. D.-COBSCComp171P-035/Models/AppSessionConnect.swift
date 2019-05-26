@@ -12,15 +12,11 @@ enum SessionKeys: String {
 
     case myHomework = "homeworkArray"
     case myUsername = "username"
-    
-//    case username = "USERNAME"
-//    case userID = "USERID"
-//    case userFB = "USERID"
-//    case userBirthday = "USERID"
 
 }
 
 class AppSessionConnect {
+    
     //TODO: FALSE & ""
     public static var activeSession: Bool = false
     public static var currentLoggedInUser: String = ""

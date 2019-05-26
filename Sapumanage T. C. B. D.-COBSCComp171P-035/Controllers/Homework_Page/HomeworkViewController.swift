@@ -21,18 +21,20 @@ class HomeworkViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         
+        // Check if there are any homework items to be displayed
         if UserDefaults.standard.object(forKey: "homeworkList") != nil {
             homeworkArray = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: "homeworkList") as! Data) as! [Homework]
             self.tableView.reloadData()
         }
         else
         {
-            // If need say there aren't any homework to display
+            
         }
         
         
     }
     
+    // Retriving and displaying homework information
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homeworkArray.count
     }
@@ -47,6 +49,7 @@ class HomeworkViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
+    // Table View - Cell Height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 73;
@@ -62,7 +65,7 @@ extension HomeworkViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    // FUNCTION WHEN ITS CLICKED
+    // FUNCTION WHEN A CELL IS CLICKED
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         // VALIDATING WHICH SEGUE WHEN THERE ARE MULTIPLE SEGUES

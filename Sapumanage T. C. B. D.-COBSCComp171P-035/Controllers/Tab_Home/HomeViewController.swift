@@ -27,9 +27,6 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Refresh", style: .plain, target: self, action: #selector(refreshTapped))
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         
         if NetworkManagement.isConnectedToNetwork() {
             getStudentList()
@@ -37,6 +34,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         else{
             displayNetworkUnavailableAlert()
         }
+        
     }
     
     @objc func refreshTapped () {
@@ -79,7 +77,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
                         
                         let student = Student(studentID: incomingStudentObject["id"] as! String, studentFirstName: incomingStudentObject["firstName"] as! String, studentLastName: incomingStudentObject["lastName"] as! String, studentPhoneNumber: incomingStudentObject["phoneNumber"] as! String, studentBatchName: incomingStudentObject["batchName"] as! String, studentEmailAddress: incomingStudentObject["email"] as! String, studentCity: incomingStudentObject["city"] as! String, studentWorkplace: incomingStudentObject["workplace"] as! String)
                         
-                        if incomingStudentObject["dpURL"] as! String != ""
+                        if incomingStudentObject["dpURL"] as! String != "null"
                         {
                             student.studentDpURL = incomingStudentObject["dpURL"] as? String
                         }
@@ -88,7 +86,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
                             student.studentDpURL = "https://t3.ftcdn.net/jpg/00/64/67/52/240_F_64675209_7ve2XQANuzuHjMZXP3aIYIpsDKEbF5dD.jpg"
                         }
                         
-                        if incomingStudentObject["fbUsername"] as! String != ""
+                        if incomingStudentObject["fbUsername"] as! String != "null"
                         {
                             student.studentUsernameFB = incomingStudentObject["fbUsername"] as? String
                         }

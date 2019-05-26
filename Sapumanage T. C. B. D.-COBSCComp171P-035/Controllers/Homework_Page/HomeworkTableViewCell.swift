@@ -10,6 +10,7 @@ import UIKit
 
 class HomeworkTableViewCell: UITableViewCell {
 
+    // Setting the labels
     @IBOutlet weak var categoryLabel: UILabel!
     @IBOutlet weak var descLabel: UILabel!
     @IBOutlet weak var homeworkTitle: UILabel!

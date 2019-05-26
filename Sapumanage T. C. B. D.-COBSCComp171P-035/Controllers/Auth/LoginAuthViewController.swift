@@ -35,6 +35,7 @@ class LoginAuthViewController: UIViewController {
         
         showFacebookLoginButton()
         
+        // Keyboard handling for two textfields
         self.usernameTxt.addTarget(self, action: #selector(usernameTextFeildChanged), for: .editingChanged)
         self.passwordTxt.addTarget(self, action: #selector(passwordTextFieldChanged), for: .editingChanged)
         
@@ -46,7 +47,7 @@ class LoginAuthViewController: UIViewController {
         self.passwordTxt.isHidden = true
         self.loginButton.isHidden = true
     
-        
+        // Adding keyboard toolbars
         addKeyboardToolBarUsernameField()
         addKeyboardToolBarPasswordField()
 
@@ -89,7 +90,6 @@ class LoginAuthViewController: UIViewController {
         {
             displayNetworkUnavailableAlert ()
         }
-        
         
     }
     

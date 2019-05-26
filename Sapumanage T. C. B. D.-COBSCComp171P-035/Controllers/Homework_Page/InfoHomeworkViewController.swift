@@ -58,6 +58,7 @@ class InfoHomeworkViewController: UIViewController {
         
     }
     
+    // Managing scroll view when keyboard is enabled
     @objc func keyboardWillShow(notification:NSNotification){
         var userInfo = notification.userInfo!
         var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue

@@ -294,17 +294,17 @@
                                                         <rect key="frame" x="0.0" y="0.0" width="144" height="72"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-header" highlightedImage="home-icon" translatesAutoresizingMaskIntoConstraints="NO" id="Jrd-3G-uqr">
-                                                                <rect key="frame" x="30" y="-1.5" width="80" height="80"/>
+                                                                <rect key="frame" x="30" y="1.5" width="69" height="69"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="80" id="0Jj-gb-MRx"/>
-                                                                    <constraint firstAttribute="height" constant="80" id="i6Q-6A-OhI"/>
+                                                                    <constraint firstAttribute="width" constant="69" id="Whs-OJ-uYM"/>
+                                                                    <constraint firstAttribute="height" constant="69" id="q1y-HV-VRB"/>
                                                                 </constraints>
                                                             </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <constraints>
-                                                            <constraint firstItem="Jrd-3G-uqr" firstAttribute="leading" secondItem="RW3-7R-iSF" secondAttribute="leading" constant="30" id="Ze0-W4-vTH"/>
-                                                            <constraint firstItem="Jrd-3G-uqr" firstAttribute="top" secondItem="RW3-7R-iSF" secondAttribute="top" constant="-1.5" id="tcD-V7-S1R"/>
+                                                            <constraint firstItem="Jrd-3G-uqr" firstAttribute="centerY" secondItem="RW3-7R-iSF" secondAttribute="centerY" id="Ris-Ad-BCd"/>
+                                                            <constraint firstItem="Jrd-3G-uqr" firstAttribute="leading" secondItem="RW3-7R-iSF" secondAttribute="leading" constant="30" id="ihu-D3-0Bh"/>
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AAf-kE-981">
@@ -878,8 +878,8 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K35-G9-NLc">
                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have not Logged In!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0S-Bb-ldo">
-                                                                <rect key="frame" x="95.5" y="11" width="184" height="20.5"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Invalid Account!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J0S-Bb-ldo">
+                                                                <rect key="frame" x="127" y="11" width="121.5" height="20.5"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -920,7 +920,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9q-Oc-tcG">
                                                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="43"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tuhan" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUv-QI-bmK">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YUv-QI-bmK">
                                                                                 <rect key="frame" x="8" y="11" width="172" height="21"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="172" id="QIj-wY-L0a"/>
@@ -977,7 +977,7 @@
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6RY-8m-2zc">
                                                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="43.5"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sapumanage" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEY-cK-YxU">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DEY-cK-YxU">
                                                                                 <rect key="frame" x="8" y="11" width="172" height="21"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="172" id="ehm-oP-Fab"/>
@@ -1077,7 +1077,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhB-DN-mtE">
                                                                 <rect key="frame" x="0.0" y="0.0" width="187.5" height="43"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="May 3, 2001" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnq-4C-5Yn">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nnq-4C-5Yn">
                                                                         <rect key="frame" x="8" y="11" width="172" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="172" id="FCx-g5-WJK"/>
@@ -1097,7 +1097,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tKW-HV-95H">
                                                                 <rect key="frame" x="0.0" y="43" width="187.5" height="43"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="18" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWO-bE-boO">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OWO-bE-boO">
                                                                         <rect key="frame" x="8" y="11" width="172" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="eL0-Vr-iQK"/>
@@ -1192,7 +1192,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wyq-VE-8Lx">
                                                                 <rect key="frame" x="0.0" y="0.0" width="187.5" height="43.5"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0770438524" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdt-UE-N7F">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jdt-UE-N7F">
                                                                         <rect key="frame" x="8" y="11.5" width="172" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="IPO-Qh-n9x"/>
@@ -1212,7 +1212,7 @@
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lkq-h3-xTw">
                                                                 <rect key="frame" x="0.0" y="43.5" width="187.5" height="43"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="tuhancs@gmail.com" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2X-5h-PQQ">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E2X-5h-PQQ">
                                                                         <rect key="frame" x="8" y="11" width="172" height="21"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="21" id="R8e-CS-vPj"/>
@@ -1281,7 +1281,6 @@
                                                                             <constraint firstAttribute="width" constant="359" id="NYz-gF-Fh4"/>
                                                                             <constraint firstAttribute="height" constant="30" id="dtj-tD-TtQ"/>
                                                                         </constraints>
-                                                                        <state key="normal" title="@TuhanSapumanage"/>
                                                                         <connections>
                                                                             <action selector="facebookUsernameButtonClicked:" destination="3Ix-AP-I8m" eventType="touchUpInside" id="fN2-ho-uLk"/>
                                                                         </connections>
