@@ -6,8 +6,11 @@
 //  Copyright © 2019 Tuhan Sapumanage. All rights reserved.
 //
 
-import UIKit
+import FacebookLogin
+import FacebookCore
 import Firebase
+import FacebookShare
+import UIKit
 
 class LoginAuthViewController: UIViewController {
 
@@ -23,6 +26,8 @@ class LoginAuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        showFacebookLoginButton()
 
         self.usernameTxt.addTarget(self, action: #selector(usernameTextFeildChanged), for: .editingChanged)
         self.passwordTxt.addTarget(self, action: #selector(passwordTextFieldChanged), for: .editingChanged)
@@ -102,6 +107,16 @@ class LoginAuthViewController: UIViewController {
 extension LoginAuthViewController: UITextFieldDelegate {
     
     @objc func usernameTextFeildChanged() {
+        
+        if self.usernameTxt.text!.count > 0 {
+            hideFacebookLoginButton()
+        }
+        else
+        {
+            showFacebookLoginButton()
+        }
+        
+        // Valid Email
         if self.usernameTxt.text!.count > 0 && self.usernameRegexValidator(usernameValidator: usernameTxt.text!) {
             UIView.animate(withDuration: 0.5){
                 self.usernameErrorLabel.isHidden = true
@@ -109,7 +124,9 @@ extension LoginAuthViewController: UITextFieldDelegate {
             }
         }else
         {
+            
             UIView.animate(withDuration: 0.5){
+                self.passwordErrorLabel.isHidden = true
                 self.usernameErrorLabel.text = "Please enter an valid Email Address"
                 self.usernameErrorLabel.isHidden = false
                 self.passwordTxt.isHidden = true
@@ -210,4 +227,54 @@ extension LoginAuthViewController {
         alertView.addAction(cancelAction)
         self.present(alertView, animated: true)
     }
+}
+
+// Facebook Authentication
+extension LoginAuthViewController: LoginButtonDelegate {
+    
+    func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
+       
+        if let accessToken = AccessToken.current {
+            let credential = FacebookAuthProvider.credential(withAccessToken: (AccessToken.current?.authenticationToken)!)
+            
+            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                if error != nil {
+                    // ...
+                    return
+                }
+                
+                let user = Auth.auth().currentUser
+                if let user = user {
+                    AppSessionConnect.currentLoggedInUser = user.email ?? "";
+                    print (AppSessionConnect.currentLoggedInUser)
+                }
+                
+                AppSessionConnect.activeSession = true
+                AppSessionConnect.passwordResetMailSent = false
+                self.dismiss(animated: true, completion: nil)
+            }
+        }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        
+    }
+    
+    func showFacebookLoginButton () {
+        
+        let loginButton = LoginButton(readPermissions: [ .publicProfile, .email ])
+        loginButton.center = view.center
+        loginButton.delegate = self
+        loginButton.tag = 100
+        
+        view.addSubview(loginButton)
+        
+    }
+    
+    func hideFacebookLoginButton () {
+        if let viewWithTag = self.view.viewWithTag(100) {
+            viewWithTag.removeFromSuperview()
+        }
+    }
+    
 }
