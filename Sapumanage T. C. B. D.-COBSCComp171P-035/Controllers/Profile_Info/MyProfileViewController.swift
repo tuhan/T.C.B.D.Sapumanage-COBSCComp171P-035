@@ -8,6 +8,8 @@
 
 import UIKit
 import Kingfisher
+import FacebookCore
+import FacebookLogin
 import Firebase
 
 class MyProfileViewController: UIViewController {
@@ -59,10 +61,17 @@ class MyProfileViewController: UIViewController {
 
     @IBAction func signoutButtonClicked(_ sender: Any) {
 
+        if let accessToken = AccessToken.current {
+            let loginManager = LoginManager()
+            loginManager.logOut() // this is an instance function
+        }
+        
+        
         do {
             AppSessionConnect.bioAuth = true
             AppSessionConnect.activeSession = false
             AppSessionConnect.currentLoggedInUser = ""
+            UserDefaults.standard.removeObject(forKey: SessionKeys.myUsername.rawValue)
             try Auth.auth().signOut()
             self.dismiss(animated: true, completion: nil)
         }

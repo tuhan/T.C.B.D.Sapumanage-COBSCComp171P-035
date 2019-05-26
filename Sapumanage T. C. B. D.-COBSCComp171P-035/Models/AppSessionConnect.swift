@@ -11,6 +11,7 @@ import Foundation
 enum SessionKeys: String {
 
     case myHomework = "homeworkArray"
+    case myUsername = "username"
     
 //    case username = "USERNAME"
 //    case userID = "USERID"

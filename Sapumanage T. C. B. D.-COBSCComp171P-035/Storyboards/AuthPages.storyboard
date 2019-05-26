@@ -98,7 +98,7 @@
                                                             <action selector="loginButtonClicked:" destination="dET-SY-otg" eventType="touchUpInside" id="slt-Wm-sAb"/>
                                                         </connections>
                                                     </button>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter an valid Email Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gN8-Te-jSp">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter an Email or Login with Facebook" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gN8-Te-jSp">
                                                         <rect key="frame" x="47" y="64" width="281" height="15"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="15" id="5Li-ah-5uH"/>

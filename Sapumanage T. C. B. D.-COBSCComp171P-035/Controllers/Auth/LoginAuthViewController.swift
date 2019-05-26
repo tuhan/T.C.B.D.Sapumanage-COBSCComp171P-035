@@ -26,15 +26,14 @@ class LoginAuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         showFacebookLoginButton()
-
+        
         self.usernameTxt.addTarget(self, action: #selector(usernameTextFeildChanged), for: .editingChanged)
         self.passwordTxt.addTarget(self, action: #selector(passwordTextFieldChanged), for: .editingChanged)
         
         loginButton.layer.cornerRadius = 10;
         
-        self.usernameErrorLabel.isHidden = true
         self.passwordErrorLabel.isHidden = true
         self.loginErrorLabel.isHidden = true
         
@@ -47,8 +46,24 @@ class LoginAuthViewController: UIViewController {
 
     }
     
+    func performLogin (){
+        let user = Auth.auth().currentUser
+        if let user = user {
+            AppSessionConnect.currentLoggedInUser = user.email ?? "";
+        }
+        
+        AppSessionConnect.activeSession = true
+        AppSessionConnect.passwordResetMailSent = false
+        UserDefaults.standard.set(AppSessionConnect.currentLoggedInUser, forKey: SessionKeys.myUsername.rawValue)
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         
+        if UserDefaults.standard.string(forKey: SessionKeys.myUsername.rawValue) != nil {
+            performLogin()
+        }
+
         if NetworkManagement.isConnectedToNetwork() {
             if AppSessionConnect.passwordResetMailSent == true {
                 self.usernameErrorLabel.text = "Password Reset Mail Sent! Please Log In."
@@ -82,10 +97,7 @@ class LoginAuthViewController: UIViewController {
                 }
                 else
                 {
-                    AppSessionConnect.currentLoggedInUser = self!.usernameTxt.text!
-                    AppSessionConnect.activeSession = true
-                    AppSessionConnect.passwordResetMailSent = false
-                    self?.dismiss(animated: true, completion: nil)
+                    self?.performLogin ()
                 }
             }
             
@@ -127,6 +139,7 @@ extension LoginAuthViewController: UITextFieldDelegate {
             
             UIView.animate(withDuration: 0.5){
                 self.passwordErrorLabel.isHidden = true
+                self.loginButton.isHidden = true
                 self.usernameErrorLabel.text = "Please enter an valid Email Address"
                 self.usernameErrorLabel.isHidden = false
                 self.passwordTxt.isHidden = true
@@ -242,16 +255,7 @@ extension LoginAuthViewController: LoginButtonDelegate {
                     // ...
                     return
                 }
-                
-                let user = Auth.auth().currentUser
-                if let user = user {
-                    AppSessionConnect.currentLoggedInUser = user.email ?? "";
-                    print (AppSessionConnect.currentLoggedInUser)
-                }
-                
-                AppSessionConnect.activeSession = true
-                AppSessionConnect.passwordResetMailSent = false
-                self.dismiss(animated: true, completion: nil)
+                self.performLogin ()
             }
         }
     }
