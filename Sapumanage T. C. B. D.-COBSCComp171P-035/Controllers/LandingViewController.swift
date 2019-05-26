@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class LandingViewController: UIViewController {
 
@@ -16,6 +17,19 @@ class LandingViewController: UIViewController {
     }
 
     override func viewDidAppear(_ animated: Bool) {
+        
+        if UserDefaults.standard.string(forKey: SessionKeys.myUsername.rawValue) != nil {
+            
+            let user = Auth.auth().currentUser
+            if let user = user {
+                AppSessionConnect.currentLoggedInUser = user.email ?? "";
+            }
+            
+            AppSessionConnect.activeSession = true
+            AppSessionConnect.passwordResetMailSent = false
+            
+            self.performSegue(withIdentifier: "TabsSegue", sender: nil)
+        }
         
         if AppSessionConnect.activeSession != true {
             self.performSegue(withIdentifier: "AuthSegue", sender: nil)

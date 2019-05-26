@@ -14,6 +14,10 @@ import UIKit
 
 class LoginAuthViewController: UIViewController {
 
+    @IBOutlet weak var activityIndicatorView: UIView!
+    @IBOutlet weak var activityIndicatorIcon: UIActivityIndicatorView!
+    
+    @IBOutlet weak var middleView: UIView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var usernameTxt: UITextField!
     @IBOutlet weak var passwordTxt: UITextField!
@@ -26,7 +30,9 @@ class LoginAuthViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
+        stopLoading()
+        
         showFacebookLoginButton()
         
         self.usernameTxt.addTarget(self, action: #selector(usernameTextFeildChanged), for: .editingChanged)
@@ -47,6 +53,9 @@ class LoginAuthViewController: UIViewController {
     }
     
     func performLogin (){
+    
+        showLoading()
+        
         let user = Auth.auth().currentUser
         if let user = user {
             AppSessionConnect.currentLoggedInUser = user.email ?? "";
@@ -55,14 +64,14 @@ class LoginAuthViewController: UIViewController {
         AppSessionConnect.activeSession = true
         AppSessionConnect.passwordResetMailSent = false
         UserDefaults.standard.set(AppSessionConnect.currentLoggedInUser, forKey: SessionKeys.myUsername.rawValue)
+        
         self.dismiss(animated: true, completion: nil)
+        
+        stopLoading()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-        if UserDefaults.standard.string(forKey: SessionKeys.myUsername.rawValue) != nil {
-            performLogin()
-        }
 
         if NetworkManagement.isConnectedToNetwork() {
             if AppSessionConnect.passwordResetMailSent == true {
@@ -86,6 +95,8 @@ class LoginAuthViewController: UIViewController {
     
     @IBAction func loginButtonClicked(_ sender: Any) {
         
+        showLoading()
+        
         self.view.endEditing(true)
         
         if NetworkManagement.isConnectedToNetwork() {
@@ -107,7 +118,7 @@ class LoginAuthViewController: UIViewController {
             displayNetworkUnavailableAlert()
         }
         
-        
+        stopLoading()
         
     }
     
@@ -117,6 +128,18 @@ class LoginAuthViewController: UIViewController {
 }
 
 extension LoginAuthViewController: UITextFieldDelegate {
+    
+    func showLoading () {
+        self.activityIndicatorView.isHidden = false
+        self.activityIndicatorIcon.startAnimating()
+        self.activityIndicatorIcon.isHidden = false
+    }
+    
+    func stopLoading () {
+        self.activityIndicatorView.isHidden = true
+        self.activityIndicatorIcon.stopAnimating()
+        self.activityIndicatorIcon.isHidden = true
+    }
     
     @objc func usernameTextFeildChanged() {
         
@@ -245,8 +268,15 @@ extension LoginAuthViewController {
 // Facebook Authentication
 extension LoginAuthViewController: LoginButtonDelegate {
     
+    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        
+    }
+    
+    
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
        
+        showLoading()
+        
         if let accessToken = AccessToken.current {
             let credential = FacebookAuthProvider.credential(withAccessToken: (AccessToken.current?.authenticationToken)!)
             
@@ -258,9 +288,8 @@ extension LoginAuthViewController: LoginButtonDelegate {
                 self.performLogin ()
             }
         }
-    }
-    
-    func loginButtonDidLogOut(_ loginButton: LoginButton) {
+        
+        stopLoading()
         
     }
     
@@ -271,7 +300,7 @@ extension LoginAuthViewController: LoginButtonDelegate {
         loginButton.delegate = self
         loginButton.tag = 100
         
-        view.addSubview(loginButton)
+        self.view.addSubview(loginButton)
         
     }
     

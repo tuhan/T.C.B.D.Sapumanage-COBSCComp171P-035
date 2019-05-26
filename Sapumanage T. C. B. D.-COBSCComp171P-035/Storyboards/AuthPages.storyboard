@@ -53,7 +53,7 @@
                                                     <constraint firstItem="AFb-n9-Wea" firstAttribute="centerX" secondItem="wxB-w3-KuY" secondAttribute="centerX" id="liX-KU-KcE"/>
                                                 </constraints>
                                             </view>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ef-bJ-bmT">
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6ef-bJ-bmT" userLabel="Middle View">
                                                 <rect key="frame" x="0.0" y="222.5" width="375" height="222"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder=" Email Address" textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="NOg-OV-tBl">
@@ -85,10 +85,10 @@
                                                         </connections>
                                                     </textField>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="paQ-dQ-HWK">
-                                                        <rect key="frame" x="47" y="156" width="281" height="50"/>
+                                                        <rect key="frame" x="47" y="156" width="281" height="31"/>
                                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="height" constant="50" id="c92-3K-S1l"/>
+                                                            <constraint firstAttribute="height" constant="31" id="c92-3K-S1l"/>
                                                             <constraint firstAttribute="width" constant="281" id="hdd-Dw-KB6"/>
                                                         </constraints>
                                                         <state key="normal" title="Login">
@@ -181,19 +181,41 @@
                                     <constraint firstItem="Raz-ct-cBc" firstAttribute="leading" secondItem="ybC-Nc-ArX" secondAttribute="leading" id="yUH-df-hbs"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e92-Rt-MaL">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="VPi-ux-rHc">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="VPi-ux-rHc" secondAttribute="trailing" id="E8j-bd-8Mk"/>
+                                    <constraint firstAttribute="bottom" secondItem="VPi-ux-rHc" secondAttribute="bottom" id="Ntc-Ze-Oq9"/>
+                                    <constraint firstItem="VPi-ux-rHc" firstAttribute="top" secondItem="e92-Rt-MaL" secondAttribute="top" id="WRs-ZL-tjm"/>
+                                    <constraint firstItem="VPi-ux-rHc" firstAttribute="leading" secondItem="e92-Rt-MaL" secondAttribute="leading" id="aIi-je-z1m"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="ybC-Nc-ArX" firstAttribute="bottom" secondItem="VTM-j9-Vyy" secondAttribute="bottom" id="9eH-A3-hRQ"/>
                             <constraint firstItem="ybC-Nc-ArX" firstAttribute="leading" secondItem="VTM-j9-Vyy" secondAttribute="leading" id="Btt-cX-IWt"/>
+                            <constraint firstItem="VTM-j9-Vyy" firstAttribute="bottom" secondItem="e92-Rt-MaL" secondAttribute="bottom" id="ImB-ZL-yd3"/>
+                            <constraint firstItem="e92-Rt-MaL" firstAttribute="top" secondItem="VTM-j9-Vyy" secondAttribute="top" id="PPc-fe-AQ4"/>
                             <constraint firstItem="ybC-Nc-ArX" firstAttribute="top" secondItem="ez2-Go-0Ok" secondAttribute="top" id="REf-T9-oAY"/>
+                            <constraint firstItem="VTM-j9-Vyy" firstAttribute="trailing" secondItem="e92-Rt-MaL" secondAttribute="trailing" id="WxZ-zY-Ww0"/>
+                            <constraint firstItem="e92-Rt-MaL" firstAttribute="leading" secondItem="VTM-j9-Vyy" secondAttribute="leading" id="ibu-BI-wGR"/>
                             <constraint firstItem="ybC-Nc-ArX" firstAttribute="trailing" secondItem="VTM-j9-Vyy" secondAttribute="trailing" id="kiX-h9-CIW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VTM-j9-Vyy"/>
                     </view>
                     <connections>
+                        <outlet property="activityIndicatorIcon" destination="VPi-ux-rHc" id="nQz-Ef-6Co"/>
+                        <outlet property="activityIndicatorView" destination="e92-Rt-MaL" id="2s8-Em-gF6"/>
                         <outlet property="loginButton" destination="paQ-dQ-HWK" id="GmR-Sc-gJx"/>
                         <outlet property="loginErrorLabel" destination="v5J-9e-33R" id="WJD-lJ-zwS"/>
+                        <outlet property="middleView" destination="6ef-bJ-bmT" id="FGr-g4-I8e"/>
                         <outlet property="passwordErrorLabel" destination="Qz0-Ta-uss" id="Um2-J2-Asy"/>
                         <outlet property="passwordTxt" destination="axr-rh-iCy" id="HPn-GB-dEy"/>
                         <outlet property="usernameErrorLabel" destination="gN8-Te-jSp" id="dIr-Hb-RIN"/>
