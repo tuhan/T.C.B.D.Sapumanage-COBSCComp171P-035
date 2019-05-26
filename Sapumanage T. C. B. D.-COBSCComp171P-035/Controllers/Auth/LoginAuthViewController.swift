@@ -75,9 +75,7 @@ class LoginAuthViewController: UIViewController {
         UserDefaults.standard.set(AppSessionConnect.currentLoggedInUser, forKey: SessionKeys.myUsername.rawValue)
         
         self.dismiss(animated: true, completion: nil)
-        
-        //stopLoading()
-        
+                
     }
     
     func performLoginFacebook (){
@@ -90,8 +88,6 @@ class LoginAuthViewController: UIViewController {
         }
         
         validateUserIdentify(userEmail: AppSessionConnect.currentLoggedInUser)
-
-        //stopLoading()
 
     }
     
