@@ -53,6 +53,7 @@ class LoginAuthViewController: UIViewController {
 
     }
     
+    // MARK: Perform login when correct credentials are enterred setting up session variables
     func performLogin (){
     
         showLoading()
@@ -93,6 +94,7 @@ class LoginAuthViewController: UIViewController {
         
     }
     
+    // MARK: Login Button Clicked
     @IBAction func loginButtonClicked(_ sender: Any) {
         
         showLoading()
@@ -122,6 +124,7 @@ class LoginAuthViewController: UIViewController {
         
     }
     
+    // MARK: Forgot Password Navigation
     @IBAction func forgotPasswordClicked(_ sender: Any) {
         self.performSegue(withIdentifier: "PasswordResetSegue", sender: nil)
     }
@@ -151,7 +154,7 @@ extension LoginAuthViewController: UITextFieldDelegate {
             showFacebookLoginButton()
         }
         
-        // Valid Email
+        // MARK: Validating Email
         if self.usernameTxt.text!.count > 0 && self.usernameRegexValidator(usernameValidator: usernameTxt.text!) {
             UIView.animate(withDuration: 0.5){
                 self.usernameErrorLabel.isHidden = true
@@ -186,6 +189,7 @@ extension LoginAuthViewController: UITextFieldDelegate {
 
     }
     
+    // MARK: Regular Expressions validating Email & Password
     func usernameRegexValidator(usernameValidator: String) -> Bool {
         let regex = try! NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}", options: [.caseInsensitive])
         return regex.numberOfMatches(in: usernameValidator, options: [], range: NSMakeRange(0, usernameValidator.characters.count)) > 0
@@ -198,7 +202,7 @@ extension LoginAuthViewController: UITextFieldDelegate {
     
 }
 
-// For Keyboard Toolbar
+// MARK: Setting up keyboard Toolbars
 extension LoginAuthViewController {
     
     func addKeyboardToolBarUsernameField() {
@@ -242,6 +246,7 @@ extension LoginAuthViewController {
         self.view.endEditing(true)
     }
     
+    // MARK: Network Availability/Reachability Check
     func displayNetworkUnavailableAlert () {
         let alertView = UIAlertController(title: "Network Error!", message: "Unable to connect to our services because you are not connected to the Internet!", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Check Network Settings", style: .default, handler: {(action: UIAlertAction!) in
@@ -265,7 +270,7 @@ extension LoginAuthViewController {
     }
 }
 
-// Facebook Authentication
+// MARK: Facebook Authentication
 extension LoginAuthViewController: LoginButtonDelegate {
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {

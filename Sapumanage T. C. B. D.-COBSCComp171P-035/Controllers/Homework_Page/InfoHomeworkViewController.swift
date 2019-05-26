@@ -58,7 +58,7 @@ class InfoHomeworkViewController: UIViewController {
         
     }
     
-    // Managing scroll view when keyboard is enabled
+    // MARK: Managing scroll view when keyboard is Displayed
     @objc func keyboardWillShow(notification:NSNotification){
         var userInfo = notification.userInfo!
         var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
@@ -75,6 +75,7 @@ class InfoHomeworkViewController: UIViewController {
         homeworkInfoScrollView.contentInset = contentInset
     }
     
+    // MARK: Saving updated information
     @IBAction func saveInfoButtonClicked(_ sender: Any) {
         
         var homeworkType: String = ""
@@ -99,6 +100,7 @@ class InfoHomeworkViewController: UIViewController {
         
     }
     
+    // MARK: Deleting existing homework Information
     @IBAction func deleteNoteClicked(_ sender: Any) {
         homeworkArray.remove(at: selectedHomeworkIndex!)
         
@@ -115,6 +117,8 @@ class InfoHomeworkViewController: UIViewController {
 }
 
 extension InfoHomeworkViewController {
+    
+    // MARK: Setting up Keyboard Toolbars
     
     // Toolbar for Homework Title
     func addKeyboardToolBarTitle() {

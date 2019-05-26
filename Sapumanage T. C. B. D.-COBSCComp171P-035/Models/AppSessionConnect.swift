@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: Keys to store and retrive UserDefaults
 enum SessionKeys: String {
 
     case myHomework = "homeworkArray"
@@ -17,14 +18,12 @@ enum SessionKeys: String {
 
 class AppSessionConnect {
     
-    //TODO: FALSE & ""
-    public static var activeSession: Bool = false
-    public static var currentLoggedInUser: String = ""
+    public static var activeSession: Bool = false // Default: false
+    public static var currentLoggedInUser: String = "" // Default: ""
     
-    // BioAuth Related | Default: false
-    public static var bioAuth: Bool = false
-    public static var bioAuthOnce: Bool = false
+    public static var bioAuth: Bool = false // Default: false
+    public static var bioAuthOnce: Bool = false // Default: false
     
-    public static var passwordResetMailSent: Bool = false
+    public static var passwordResetMailSent: Bool = false // Default: false
     
 }

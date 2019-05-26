@@ -28,6 +28,7 @@ class StudentInfoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // MARK: Populating student information retrived from the Array that is sent from previous ViewController
         if let dpURL = studentInfo.studentDpURL {
             self.dpImageView.layer.masksToBounds = true
             dpImageView.layer.cornerRadius = 34.5
@@ -84,13 +85,13 @@ class StudentInfoViewController: UIViewController {
         
     }
     
-
+    // MARK: Dismiss the Student Information View
     @IBAction func doneButtonClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
     
     
-    //Redirect when profile username is clicked
+    // MARK: Redirect when profile username is clicked
     @IBAction func fbButtonClicked(_ sender: Any) {
         
         let fbURL: String = "https://www.facebook.com/\(studentInfo.studentUsernameFB ?? "")"

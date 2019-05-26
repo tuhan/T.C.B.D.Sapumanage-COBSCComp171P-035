@@ -18,6 +18,7 @@ class LandingViewController: UIViewController {
 
     override func viewDidAppear(_ animated: Bool) {
         
+        // MARK: See if a user is already logged in. If Yes, Continue to Tabbed pane skipping Login (Needed When the App is Closed and Reopened)
         if UserDefaults.standard.string(forKey: SessionKeys.myUsername.rawValue) != nil {
             
             let user = Auth.auth().currentUser
@@ -31,6 +32,7 @@ class LandingViewController: UIViewController {
             self.performSegue(withIdentifier: "TabsSegue", sender: nil)
         }
         
+        // MARK: See if there is an active session (Needed When the App is Running on Background)
         if AppSessionConnect.activeSession != true {
             self.performSegue(withIdentifier: "AuthSegue", sender: nil)
         }

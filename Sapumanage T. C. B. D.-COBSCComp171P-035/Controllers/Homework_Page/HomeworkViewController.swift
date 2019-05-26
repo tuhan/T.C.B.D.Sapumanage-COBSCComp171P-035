@@ -21,7 +21,7 @@ class HomeworkViewController: UIViewController, UITableViewDelegate, UITableView
     
     override func viewWillAppear(_ animated: Bool) {
         
-        // Check if there are any homework items to be displayed
+        // MARK: Check if there are any homework items. If yes, Display them
         if UserDefaults.standard.object(forKey: "homeworkList") != nil {
             homeworkArray = NSKeyedUnarchiver.unarchiveObject(with: UserDefaults.standard.object(forKey: "homeworkList") as! Data) as! [Homework]
             self.tableView.reloadData()
@@ -31,10 +31,9 @@ class HomeworkViewController: UIViewController, UITableViewDelegate, UITableView
             
         }
         
-        
     }
     
-    // Retriving and displaying homework information
+    // MARK: Retriving and displaying homework information populating the TableView
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return homeworkArray.count
     }
@@ -49,7 +48,7 @@ class HomeworkViewController: UIViewController, UITableViewDelegate, UITableView
         return cell
     }
     
-    // Table View - Cell Height
+    // MARK: Setting TableView Cell Height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         return 73;
@@ -59,16 +58,16 @@ class HomeworkViewController: UIViewController, UITableViewDelegate, UITableView
 
 extension HomeworkViewController {
     
-    // FROM TABLE VIEW DELEGATE
+    // MARK: Handling the navigation when a cell is clicked
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "HomeworkInfoSegue", sender: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    // FUNCTION WHEN A CELL IS CLICKED
+    // Fires when the cell is clicked, preparing for the segue to set destination view required variables
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
-        // VALIDATING WHICH SEGUE WHEN THERE ARE MULTIPLE SEGUES
+        // Validating and seeing if the incoming segue is the needed one
         if segue.identifier == "HomeworkInfoSegue" {
             
             let indexPassed: Int = sender as! Int

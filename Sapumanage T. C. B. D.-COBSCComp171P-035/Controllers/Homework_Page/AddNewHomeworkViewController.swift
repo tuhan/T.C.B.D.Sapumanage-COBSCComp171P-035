@@ -38,6 +38,7 @@ class AddNewHomeworkViewController: UIViewController {
         
     }
     
+    // MARK: Enabling Scroll View when Keyboard Appears
     @objc func keyboardWillShow(notification:NSNotification){
         var userInfo = notification.userInfo!
         var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
@@ -53,7 +54,8 @@ class AddNewHomeworkViewController: UIViewController {
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         homeworlScrollView.contentInset = contentInset
     }
-    
+
+    // MARK: Saving Homework Information
     @IBAction func saveButtonClicked(_ sender: Any) {
         
         var homeworkType: String = ""
@@ -67,6 +69,7 @@ class AddNewHomeworkViewController: UIViewController {
             homeworkType = "Non-Acadamic"
         }
         
+        // MARK: Saving the homework to UserDefaults
         let newHomework = Homework(json: ["homeworkTitle": homeworkTitleTextField.text, "homeworkCategory": homeworkType, "homeworkDesc": descriptionTextView.text])
         
         if UserDefaults.standard.object(forKey: "homeworkList") != nil {
@@ -90,7 +93,9 @@ class AddNewHomeworkViewController: UIViewController {
 
 extension AddNewHomeworkViewController {
     
-    // Toolbar for Homework Title
+    // MARK: Setting up Keyboard Toolbars
+    
+    // Toolbar for HomeworkTitle
     func addKeyboardToolBarTitle() {
         let toolbarStatus = UIToolbar()
         toolbarStatus.sizeToFit()

@@ -55,11 +55,13 @@ class MyProfileViewController: UIViewController {
         
     }
     
+    // MARK: Dismiss the user information and display tabbed pane
     @IBAction func doneButtonClicked(_ sender: Any) {
         AppSessionConnect.bioAuth = true
         self.dismiss(animated: true, completion: nil)
     }
 
+    // MARK: Sign user out
     @IBAction func signoutButtonClicked(_ sender: Any) {
 
         if let accessToken = AccessToken.current {
@@ -120,11 +122,13 @@ extension MyProfileViewController {
             
             var tempStudentArray: [Student] = []
             
+            // MARK: Retriving the student information and populating with logged in student
             if snapshot.childrenCount > 0 {
                 for student in snapshot.children.allObjects as! [DataSnapshot] {
                     
                     let incomingStudentObject = student.value as! [String: AnyObject]
                     
+                    // MARK: Selecting the currently logged in Student
                     if incomingStudentObject["email"] as! String == AppSessionConnect.currentLoggedInUser {
                         
                         self.notLoggedInErrorLabel.isHidden = true
@@ -199,6 +203,7 @@ extension MyProfileViewController {
         }
     }
     
+    // MARK: Populating the View with User Information
     func populateInformation (){
         
         if let firstName = loggedInStudent.studentFirstName {
@@ -261,6 +266,7 @@ extension MyProfileViewController {
         self.activityIndicatorIcon.isHidden = true
     }
     
+    // MARK: Network Availability/Reachability Check
     func displayNetworkUnavailableAlert () {
         let alertView = UIAlertController(title: "Network Error!", message: "Unable to connect to our services because you are not connected to the Internet!", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Check Network Settings", style: .default, handler: {(action: UIAlertAction!) in

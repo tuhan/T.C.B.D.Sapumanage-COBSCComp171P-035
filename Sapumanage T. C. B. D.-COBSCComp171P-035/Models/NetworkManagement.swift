@@ -1,6 +1,7 @@
 import Foundation
 import SystemConfiguration
 
+// MARK: Rechability Test
 public class NetworkManagement {
     
     class func isConnectedToNetwork() -> Bool {

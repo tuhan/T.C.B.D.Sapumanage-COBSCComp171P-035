@@ -6,8 +6,11 @@
 //  Copyright © 2019 Tuhan Sapumanage. All rights reserved.
 //
 
+// CREDITS: http://ios-tutorial.com/how-to-save-array-of-custom-objects-to-nsuserdefaults/
+
 import Foundation
 
+// MARK: Homework object that is compatible with UserDefaults
 class Homework: NSObject, NSCoding {
     
     var homeworkTitle: String?

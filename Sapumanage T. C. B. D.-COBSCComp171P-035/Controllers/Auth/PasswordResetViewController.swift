@@ -30,8 +30,7 @@ class PasswordResetViewController: UIViewController {
         
     }
     
-    
-
+    // MARK: Sending Email to Reset Password
     @IBAction func sendEmailButtonClicked(_ sender: Any) {
         Auth.auth().sendPasswordReset(withEmail: emailTextField.text!) { error in
             if error != nil {
@@ -51,6 +50,7 @@ class PasswordResetViewController: UIViewController {
     }
 }
 
+// MARK: Validating Email
 extension PasswordResetViewController: UITextFieldDelegate {
     
     @objc func usernameTextFeildChanged() {
@@ -73,7 +73,7 @@ extension PasswordResetViewController: UITextFieldDelegate {
     }
 }
 
-// Setting up keyboard toolbars
+// MARK: Setting up keyboard toolbars
 extension PasswordResetViewController {
     
     func addKeyboardToolBarUsernameField() {

@@ -6,6 +6,8 @@
 //  Copyright © 2019 Tuhan Sapumanage. All rights reserved.
 //
 
+// CREDITS: https://stackoverflow.com/questions/39768600/how-to-programmatically-set-action-for-barbuttonitem-in-swift-3/39768655
+
 import UIKit
 import FirebaseAuth
 import Firebase
@@ -53,7 +55,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
         self.activityIndicatorIcon.isHidden = true
     }
     
-    
+    // MARK: Retriving the actual student list (Full List)
     func getStudentList() {
         
         UIView.animate(withDuration: 0.5){
@@ -124,6 +126,7 @@ class HomeViewController: UIViewController, UITableViewDataSource {
     
 }
 
+// MARK: Retriving and populating the TableView
 extension HomeViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -133,7 +136,7 @@ extension HomeViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HomePageTableViewCell", for: indexPath) as! HomePageTableViewCell
         
-        // Ensuring Validations
+        // MARK: Ensuring Validations
         if let firstName = studentList[indexPath.row].studentFirstName {
             if let lastName = studentList[indexPath.row].studentLastName {
                 cell.nameLabel.text = "\(firstName) \(lastName)"
@@ -153,7 +156,7 @@ extension HomeViewController: UITableViewDelegate {
         return cell
     }
     
-    // FROM TABLE VIEW DELEGATE
+    // MARK: FROM TABLE VIEW DELEGATE
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.performSegue(withIdentifier: "ViewUserSegue", sender: studentList[indexPath.row])
         tableView.deselectRow(at: indexPath, animated: true)
@@ -173,6 +176,7 @@ extension HomeViewController: UITableViewDelegate {
         
     }
     
+    // MARK: Network Availability/Reachability Check
     func displayNetworkUnavailableAlert () {
         let alertView = UIAlertController(title: "Network Error!", message: "Unable to connect to our services because you are not connected to the Internet!", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Check Network Settings", style: .default, handler: {(action: UIAlertAction!) in

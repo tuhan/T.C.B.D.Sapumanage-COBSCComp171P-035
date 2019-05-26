@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class Student {
-    // Var
+    // MARK: Student Attributes
     var studentID: String!
     var studentFirstName: String!
     var studentLastName: String!
@@ -24,6 +24,7 @@ class Student {
     var studentDpURL : String?
     var studentDp: UIImage?
     
+    // MARK: Default Constructor
     init (studentID: String, studentFirstName: String, studentLastName: String, studentPhoneNumber: String, studentBatchName: String, studentEmailAddress: String, studentCity: String, studentWorkplace: String) {
         
         self.studentID = studentID
