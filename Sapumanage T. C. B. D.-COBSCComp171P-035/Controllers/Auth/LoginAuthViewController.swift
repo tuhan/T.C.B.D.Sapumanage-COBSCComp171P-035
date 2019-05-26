@@ -76,7 +76,7 @@ class LoginAuthViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
         
-        stopLoading()
+        //stopLoading()
         
     }
     
@@ -91,7 +91,7 @@ class LoginAuthViewController: UIViewController {
         
         validateUserIdentify(userEmail: AppSessionConnect.currentLoggedInUser)
 
-        stopLoading()
+        //stopLoading()
 
     }
     

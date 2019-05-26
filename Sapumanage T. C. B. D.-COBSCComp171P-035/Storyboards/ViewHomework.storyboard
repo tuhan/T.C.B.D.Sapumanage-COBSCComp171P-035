@@ -45,7 +45,20 @@
                                                                                     </view>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fr2-f4-7pc">
                                                                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="44.5"/>
+                                                                                        <subviews>
+                                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfC-ZS-6z8">
+                                                                                                <rect key="frame" x="110" y="7" width="48" height="30"/>
+                                                                                                <state key="normal" title="Cancel"/>
+                                                                                                <connections>
+                                                                                                    <action selector="cancelButtonClicked:" destination="lnZ-3j-3yd" eventType="touchUpInside" id="0bV-Q3-11a"/>
+                                                                                                </connections>
+                                                                                            </button>
+                                                                                        </subviews>
                                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <constraints>
+                                                                                            <constraint firstAttribute="trailing" secondItem="MfC-ZS-6z8" secondAttribute="trailing" constant="29.5" id="Fgk-sJ-2vM"/>
+                                                                                            <constraint firstItem="MfC-ZS-6z8" firstAttribute="centerY" secondItem="fr2-f4-7pc" secondAttribute="centerY" id="IjI-RG-Oem"/>
+                                                                                        </constraints>
                                                                                     </view>
                                                                                 </subviews>
                                                                             </stackView>
@@ -460,13 +473,6 @@
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l1J-qH-S63">
                                                                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="67"/>
                                                                                         <subviews>
-                                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MfC-ZS-6z8">
-                                                                                                <rect key="frame" x="0.0" y="18.5" width="48" height="30"/>
-                                                                                                <state key="normal" title="Cancel"/>
-                                                                                                <connections>
-                                                                                                    <action selector="cancelButtonClicked:" destination="lnZ-3j-3yd" eventType="touchUpInside" id="0bV-Q3-11a"/>
-                                                                                                </connections>
-                                                                                            </button>
                                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j2c-Fw-Sdc">
                                                                                                 <rect key="frame" x="88" y="18.5" width="70" height="30"/>
                                                                                                 <state key="normal" title="Save Note"/>
@@ -474,13 +480,22 @@
                                                                                                     <action selector="saveInfoButtonClicked:" destination="lnZ-3j-3yd" eventType="touchUpInside" id="YdV-By-UZU"/>
                                                                                                 </connections>
                                                                                             </button>
+                                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Rz-9a-W0U">
+                                                                                                <rect key="frame" x="0.0" y="18.5" width="45" height="30"/>
+                                                                                                <state key="normal" title="Delete">
+                                                                                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                                </state>
+                                                                                                <connections>
+                                                                                                    <action selector="deleteNoteClicked:" destination="lnZ-3j-3yd" eventType="touchUpInside" id="d79-xV-HWy"/>
+                                                                                                </connections>
+                                                                                            </button>
                                                                                         </subviews>
                                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                                         <constraints>
-                                                                                            <constraint firstItem="j2c-Fw-Sdc" firstAttribute="leading" secondItem="MfC-ZS-6z8" secondAttribute="trailing" constant="40" id="10s-X3-wAg"/>
-                                                                                            <constraint firstItem="j2c-Fw-Sdc" firstAttribute="centerY" secondItem="l1J-qH-S63" secondAttribute="centerY" id="9xp-LB-nWw"/>
-                                                                                            <constraint firstItem="MfC-ZS-6z8" firstAttribute="leading" secondItem="l1J-qH-S63" secondAttribute="leading" id="KUf-N2-z4B"/>
-                                                                                            <constraint firstItem="MfC-ZS-6z8" firstAttribute="centerY" secondItem="l1J-qH-S63" secondAttribute="centerY" id="LBh-VB-qYZ"/>
+                                                                                            <constraint firstItem="j2c-Fw-Sdc" firstAttribute="centerY" secondItem="l1J-qH-S63" secondAttribute="centerY" id="RY9-qC-9zh"/>
+                                                                                            <constraint firstItem="9Rz-9a-W0U" firstAttribute="centerY" secondItem="l1J-qH-S63" secondAttribute="centerY" id="Tae-3T-BRF"/>
+                                                                                            <constraint firstItem="9Rz-9a-W0U" firstAttribute="leading" secondItem="l1J-qH-S63" secondAttribute="leading" id="Xb8-fb-1Qb"/>
+                                                                                            <constraint firstAttribute="trailing" secondItem="j2c-Fw-Sdc" secondAttribute="trailing" constant="29.5" id="t08-MD-Gcw"/>
                                                                                         </constraints>
                                                                                     </view>
                                                                                 </subviews>
@@ -502,22 +517,7 @@
                                                                                 <subviews>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4WU-q2-IsD">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="375" height="66.5"/>
-                                                                                        <subviews>
-                                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Rz-9a-W0U">
-                                                                                                <rect key="frame" x="107.5" y="0.0" width="160" height="30"/>
-                                                                                                <state key="normal" title="Delete Homework Note">
-                                                                                                    <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                                </state>
-                                                                                                <connections>
-                                                                                                    <action selector="deleteNoteClicked:" destination="lnZ-3j-3yd" eventType="touchUpInside" id="d79-xV-HWy"/>
-                                                                                                </connections>
-                                                                                            </button>
-                                                                                        </subviews>
                                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstItem="9Rz-9a-W0U" firstAttribute="top" secondItem="4WU-q2-IsD" secondAttribute="top" id="O6S-Ay-LmB"/>
-                                                                                            <constraint firstItem="9Rz-9a-W0U" firstAttribute="centerX" secondItem="4WU-q2-IsD" secondAttribute="centerX" id="ltm-sP-VSh"/>
-                                                                                        </constraints>
                                                                                     </view>
                                                                                 </subviews>
                                                                             </stackView>
