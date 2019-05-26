@@ -10,6 +10,7 @@ import UIKit
 
 class AddNewHomeworkViewController: UIViewController {
 
+    @IBOutlet weak var homeworlScrollView: UIScrollView!
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var homeworkTitleTextField: UITextField!
     @IBOutlet weak var categorySwitch: UISwitch!
@@ -31,9 +32,28 @@ class AddNewHomeworkViewController: UIViewController {
         addKeyboardToolBarTitle()
         addKeyboardToolBarDesc()
         
+        // Enabling Scroll View
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillShow), name:UIResponder.keyboardWillShowNotification, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.keyboardWillHide), name:UIResponder.keyboardWillHideNotification, object: nil)
+        
     }
     
-
+    @objc func keyboardWillShow(notification:NSNotification){
+        var userInfo = notification.userInfo!
+        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        keyboardFrame = self.view.convert(keyboardFrame, from: nil)
+        
+        var contentInset:UIEdgeInsets = self.homeworlScrollView.contentInset
+        contentInset.bottom = keyboardFrame.size.height
+        homeworlScrollView.contentInset = contentInset
+    }
+    
+    @objc func keyboardWillHide(notification:NSNotification){
+        
+        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        homeworlScrollView.contentInset = contentInset
+    }
+    
     @IBAction func saveButtonClicked(_ sender: Any) {
         
         var homeworkType: String = ""
@@ -110,7 +130,7 @@ extension AddNewHomeworkViewController {
     }
     
     @objc func doneSelectDesc() {
-        saveButtonClicked(UIButton.self)
+        saveButtonClicked(UIButton())
         self.view.endEditing(true)
     }
     
