@@ -17,15 +17,19 @@ class AddNewHomeworkViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //For Description
+        // For Description
         self.descriptionTextView.layer.borderColor = UIColor.lightGray.cgColor
         self.descriptionTextView.layer.borderWidth = 1.0;
         self.descriptionTextView.layer.cornerRadius = 8;
         
-        //For Homework Title
+        // For Homework Title
         self.homeworkTitleTextField.layer.borderColor = UIColor.lightGray.cgColor
         self.homeworkTitleTextField.layer.borderWidth = 1.0;
         self.homeworkTitleTextField.layer.cornerRadius = 8;
+        
+        // Adding Keyboard Toolbars
+        addKeyboardToolBarTitle()
+        addKeyboardToolBarDesc()
         
     }
     
@@ -61,6 +65,55 @@ class AddNewHomeworkViewController: UIViewController {
     @IBAction func cancelButtonClicked(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
-    
 
 }
+
+extension AddNewHomeworkViewController {
+    
+    // Toolbar for Homework Title
+    func addKeyboardToolBarTitle() {
+        let toolbarStatus = UIToolbar()
+        toolbarStatus.sizeToFit()
+        
+        let clearButton = UIBarButtonItem(title: "Clear", style: .plain, target: nil, action: #selector(clearSelect))
+        let doneStatusButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(doneSelect))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolbarStatus.setItems([clearButton, spaceButton, doneStatusButton], animated: false)
+        
+        self.homeworkTitleTextField.inputAccessoryView = toolbarStatus
+    }
+    
+    @objc func clearSelect() {
+        self.homeworkTitleTextField.text = ""
+    }
+    
+    @objc func doneSelect() {
+        self.view.endEditing(true)
+    }
+    
+    // Toolbar for HomeworkDesc
+    func addKeyboardToolBarDesc() {
+        let toolbarStatus = UIToolbar()
+        toolbarStatus.sizeToFit()
+        
+        let clearButton = UIBarButtonItem(title: "Clear", style: .plain, target: nil, action: #selector(clearSelectDesc))
+        
+        let doneStatusButton = UIBarButtonItem(title: "Save", style: .done, target: nil, action: #selector(doneSelectDesc))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        toolbarStatus.setItems([clearButton, spaceButton, doneStatusButton], animated: false)
+        
+        self.descriptionTextView.inputAccessoryView = toolbarStatus
+    }
+    
+    @objc func clearSelectDesc() {
+        self.descriptionTextView.text = ""
+    }
+    
+    @objc func doneSelectDesc() {
+        saveButtonClicked(UIButton.self)
+        self.view.endEditing(true)
+    }
+    
+}
+
+
