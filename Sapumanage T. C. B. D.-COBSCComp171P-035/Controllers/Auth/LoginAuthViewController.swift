@@ -26,7 +26,10 @@ class LoginAuthViewController: UIViewController {
     @IBOutlet weak var usernameErrorLabel: UILabel!
     @IBOutlet weak var passwordErrorLabel: UILabel!
     
+    @IBOutlet weak var facebookLoginView: UIView!
     @IBOutlet weak var welcomeHeader: UILabel!
+    
+    var facebookLoginUsed: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,6 +76,7 @@ class LoginAuthViewController: UIViewController {
         
     }
     
+    // MARK: ViewDidAppear
     override func viewDidAppear(_ animated: Bool) {
 
         if NetworkManagement.isConnectedToNetwork() {
@@ -92,11 +96,17 @@ class LoginAuthViewController: UIViewController {
             displayNetworkUnavailableAlert ()
         }
         
+        if facebookLoginUsed != false {
+            hideFacebookLoginButton ()
+            showLoading ()
+        }
+        
     }
     
     // MARK: Login Button Clicked
     @IBAction func loginButtonClicked(_ sender: Any) {
         
+        self.view.endEditing(true)
         showLoading()
         
         self.view.endEditing(true)
@@ -274,23 +284,31 @@ extension LoginAuthViewController {
 extension LoginAuthViewController: LoginButtonDelegate {
     
     func loginButtonDidLogOut(_ loginButton: LoginButton) {
-        
+        // Implemented in User Profile
     }
     
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
        
-        showLoading()
+        facebookLoginUsed = true
         
-        if let accessToken = AccessToken.current {
+        if AccessToken.current != nil {
+            
+            self.activityIndicatorView.isHidden = false
+            
             let credential = FacebookAuthProvider.credential(withAccessToken: (AccessToken.current?.authenticationToken)!)
             
             Auth.auth().signInAndRetrieveData(with: credential) { (authResult, error) in
+                self.showLoading()
                 if error != nil {
-                    // ...
+                    self.showLoading()
                     return
                 }
-                self.performLogin ()
+                else
+                {
+                    self.showLoading()
+                    self.performLogin ()
+                }
             }
         }
         
@@ -300,6 +318,7 @@ extension LoginAuthViewController: LoginButtonDelegate {
     
     func showFacebookLoginButton () {
         
+        self.facebookLoginView.isHidden = false
         let loginButton = LoginButton(readPermissions: [ .publicProfile, .email ])
         loginButton.center = view.center
         loginButton.delegate = self
@@ -310,6 +329,7 @@ extension LoginAuthViewController: LoginButtonDelegate {
     }
     
     func hideFacebookLoginButton () {
+        self.facebookLoginView.isHidden = true
         if let viewWithTag = self.view.viewWithTag(100) {
             viewWithTag.removeFromSuperview()
         }

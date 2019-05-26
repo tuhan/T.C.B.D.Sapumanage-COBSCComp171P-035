@@ -32,6 +32,8 @@ class PasswordResetViewController: UIViewController {
     
     // MARK: Sending Email to Reset Password
     @IBAction func sendEmailButtonClicked(_ sender: Any) {
+        
+        self.view.endEditing(true)
         Auth.auth().sendPasswordReset(withEmail: emailTextField.text!) { error in
             if error != nil {
                 self.errorLabel.text = "Error Occured! Please check your email address and Try Again!"
