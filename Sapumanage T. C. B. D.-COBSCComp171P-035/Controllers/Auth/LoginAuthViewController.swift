@@ -379,6 +379,7 @@ extension LoginAuthViewController {
                     }
                     else
                     {
+                        self.stopLoading()
                         AppSessionConnect.currentLoggedInUser = ""
                         self.loginErrorLabel.text = "Invalid User. The user selected is not in our Database"
                         self.loginErrorLabel.isHidden = false
