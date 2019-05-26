@@ -14,6 +14,8 @@ import UIKit
 
 class LoginAuthViewController: UIViewController {
 
+    var ref: DatabaseReference!
+    
     @IBOutlet weak var activityIndicatorView: UIView!
     @IBOutlet weak var activityIndicatorIcon: UIActivityIndicatorView!
     
@@ -30,6 +32,7 @@ class LoginAuthViewController: UIViewController {
     @IBOutlet weak var welcomeHeader: UILabel!
     
     var facebookLoginUsed: Bool = false
+    var emailLoginUsed: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,7 +61,7 @@ class LoginAuthViewController: UIViewController {
     
     // MARK: Perform login when correct credentials are enterred setting up session variables
     func performLogin (){
-    
+        
         showLoading()
         
         let user = Auth.auth().currentUser
@@ -74,6 +77,38 @@ class LoginAuthViewController: UIViewController {
         
         stopLoading()
         
+    }
+    
+    func performLoginFacebook (){
+        
+        showLoading()
+        
+        let user = Auth.auth().currentUser
+        if let user = user {
+            AppSessionConnect.currentLoggedInUser = user.email ?? "";
+        }
+        
+        if validateUserIdentify(userEmail: AppSessionConnect.currentLoggedInUser) == true {
+            
+            self.loginErrorLabel.isHidden = true
+            AppSessionConnect.activeSession = true
+            AppSessionConnect.passwordResetMailSent = false
+            UserDefaults.standard.set(AppSessionConnect.currentLoggedInUser, forKey: SessionKeys.myUsername.rawValue)
+            
+            self.dismiss(animated: true, completion: nil)
+        }
+        else
+        {
+            AppSessionConnect.currentLoggedInUser = ""
+            self.loginErrorLabel.text = "Invalid User. The user selected is not in our Database"
+            self.loginErrorLabel.isHidden = false
+            showFacebookLoginButton()
+        }
+        
+        
+        
+        stopLoading()
+
     }
     
     // MARK: ViewDidAppear
@@ -96,7 +131,7 @@ class LoginAuthViewController: UIViewController {
             displayNetworkUnavailableAlert ()
         }
         
-        if facebookLoginUsed != false {
+        if facebookLoginUsed != false || emailLoginUsed != false{
             hideFacebookLoginButton ()
             showLoading ()
         }
@@ -105,11 +140,10 @@ class LoginAuthViewController: UIViewController {
     
     // MARK: Login Button Clicked
     @IBAction func loginButtonClicked(_ sender: Any) {
-        
+    
         self.view.endEditing(true)
+        
         showLoading()
-        
-        self.view.endEditing(true)
         
         if NetworkManagement.isConnectedToNetwork() {
         
@@ -289,11 +323,9 @@ extension LoginAuthViewController: LoginButtonDelegate {
     
     
     func loginButtonDidCompleteLogin(_ loginButton: LoginButton, result: LoginResult) {
-       
-        facebookLoginUsed = true
         
         if AccessToken.current != nil {
-            
+            facebookLoginUsed = true
             self.activityIndicatorView.isHidden = false
             
             let credential = FacebookAuthProvider.credential(withAccessToken: (AccessToken.current?.authenticationToken)!)
@@ -307,7 +339,7 @@ extension LoginAuthViewController: LoginButtonDelegate {
                 else
                 {
                     self.showLoading()
-                    self.performLogin ()
+                    self.performLoginFacebook ()
                 }
             }
         }
@@ -335,4 +367,39 @@ extension LoginAuthViewController: LoginButtonDelegate {
         }
     }
     
+}
+
+// MARK: Validating Users
+extension LoginAuthViewController {
+    
+    func validateUserIdentify (userEmail: String) -> Bool {
+        
+        var userValidity: Bool = false
+        
+        ref = Database.database().reference()
+        self.ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as! NSDictionary
+            
+            // Any Print Statement if Needed to Debug
+            
+            var tempStudentArray: [Student] = []
+            
+            // MARK: Retriving the student information and populating with logged in student
+            if snapshot.childrenCount > 0 {
+                for student in snapshot.children.allObjects as! [DataSnapshot] {
+                    
+                    let incomingStudentObject = student.value as! [String: AnyObject]
+                    
+                    // MARK: Selecting the currently logged in Student
+                    if incomingStudentObject["email"] as! String == userEmail {
+                        
+                        userValidity = true
+                        
+                    }
+                }
+                
+            }
+        })
+        return userValidity
+    }
 }

@@ -26,4 +26,6 @@ class AppSessionConnect {
     
     public static var passwordResetMailSent: Bool = false // Default: false
     
+    public static var studentList: [Student] = []
+    
 }
