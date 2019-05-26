@@ -33,6 +33,7 @@ class LoginAuthViewController: UIViewController {
     
     var facebookLoginUsed: Bool = false
     var emailLoginUsed: Bool = false
+    var userValidity: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,25 +89,8 @@ class LoginAuthViewController: UIViewController {
             AppSessionConnect.currentLoggedInUser = user.email ?? "";
         }
         
-        if validateUserIdentify(userEmail: AppSessionConnect.currentLoggedInUser) == true {
-            
-            self.loginErrorLabel.isHidden = true
-            AppSessionConnect.activeSession = true
-            AppSessionConnect.passwordResetMailSent = false
-            UserDefaults.standard.set(AppSessionConnect.currentLoggedInUser, forKey: SessionKeys.myUsername.rawValue)
-            
-            self.dismiss(animated: true, completion: nil)
-        }
-        else
-        {
-            AppSessionConnect.currentLoggedInUser = ""
-            self.loginErrorLabel.text = "Invalid User. The user selected is not in our Database"
-            self.loginErrorLabel.isHidden = false
-            showFacebookLoginButton()
-        }
-        
-        
-        
+        validateUserIdentify(userEmail: AppSessionConnect.currentLoggedInUser)
+
         stopLoading()
 
     }
@@ -374,15 +358,11 @@ extension LoginAuthViewController {
     
     func validateUserIdentify (userEmail: String) -> Bool {
         
-        var userValidity: Bool = false
-        
         ref = Database.database().reference()
         self.ref.child("users").observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as! NSDictionary
             
             // Any Print Statement if Needed to Debug
-            
-            var tempStudentArray: [Student] = []
             
             // MARK: Retriving the student information and populating with logged in student
             if snapshot.childrenCount > 0 {
@@ -393,9 +373,22 @@ extension LoginAuthViewController {
                     // MARK: Selecting the currently logged in Student
                     if incomingStudentObject["email"] as! String == userEmail {
                         
-                        userValidity = true
+                        self.loginErrorLabel.isHidden = true
+                        AppSessionConnect.activeSession = true
+                        AppSessionConnect.passwordResetMailSent = false
+                        UserDefaults.standard.set(AppSessionConnect.currentLoggedInUser, forKey: SessionKeys.myUsername.rawValue)
+                        
+                        self.dismiss(animated: true, completion: nil)
                         
                     }
+                    else
+                    {
+                        AppSessionConnect.currentLoggedInUser = ""
+                        self.loginErrorLabel.text = "Invalid User. The user selected is not in our Database"
+                        self.loginErrorLabel.isHidden = false
+                        self.showFacebookLoginButton()
+                    }
+                    
                 }
                 
             }

@@ -78,25 +78,42 @@ class InfoHomeworkViewController: UIViewController {
     // MARK: Saving updated information
     @IBAction func saveInfoButtonClicked(_ sender: Any) {
         
-        var homeworkType: String = ""
-        
-        if homeworkCategorySwitch.isOn {
-            homeworkType = "Acadamic"
+        if self.homeworkTitleTextField.text == "" {
+            
+            let alertView = UIAlertController(title: "Heads Up!", message: "The homework title cannot be Empty!", preferredStyle: .alert)
+            
+            
+            let cancelAction = UIAlertAction(title: "OK", style: .cancel, handler: {(action: UIAlertAction!) in
+                print ("Cancel Clicked")
+            })
+            
+            alertView.addAction(cancelAction)
+            self.present(alertView, animated: true)
+            
         }
         else
         {
-            homeworkType = "Non-Acadamic"
+            var homeworkType: String = ""
+            
+            if homeworkCategorySwitch.isOn {
+                homeworkType = "Acadamic"
+            }
+            else
+            {
+                homeworkType = "Non-Acadamic"
+            }
+            
+            let updatedHomework = Homework(json: ["homeworkTitle": homeworkTitleTextField.text, "homeworkCategory": homeworkType, "homeworkDesc": homeworkDescription.text])
+            
+            
+            homeworkArray[selectedHomeworkIndex!] = updatedHomework
+            
+            let encodedData = NSKeyedArchiver.archivedData(withRootObject: homeworkArray)
+            UserDefaults.standard.set(encodedData, forKey: "homeworkList")
+            
+            self.dismiss(animated: true, completion: nil)
         }
         
-        let updatedHomework = Homework(json: ["homeworkTitle": homeworkTitleTextField.text, "homeworkCategory": homeworkType, "homeworkDesc": homeworkDescription.text])
-        
-        
-        homeworkArray[selectedHomeworkIndex!] = updatedHomework
-        
-        let encodedData = NSKeyedArchiver.archivedData(withRootObject: homeworkArray)
-        UserDefaults.standard.set(encodedData, forKey: "homeworkList")
-        
-        self.dismiss(animated: true, completion: nil)
         
     }
     
