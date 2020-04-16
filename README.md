@@ -4,6 +4,3 @@ Repository that holds the source code for iOS Development Assignment which is de
 Name: Sapumanage T. C. B. D. <br/>
 NIBM Index Number: COBSCComp-171P-035 <br/>
 Coventry Index Number: TBA <br/>
-<br/>
-Sample Username: tuhancs@gmail.com <br/>
-Sample Password: pass@123 <br/>
